@@ -13,4 +13,13 @@ export default NextAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         }),
     ],
+    session: {
+        jwt: true,
+        maxAge: 30 * 24 * 60 * 60,
+    },
+    secret: process.env.NEXTAUTH_SECRET,
+    jwt: {
+        signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
+    },
+    database: process.env.DATABASE_URL,
 })
