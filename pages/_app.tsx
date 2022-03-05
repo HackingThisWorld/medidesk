@@ -4,9 +4,13 @@ import Navbar from '../components/Navbar'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="mx-auto max-w-7xl px-4">
-      <Navbar />
-      <Component {...pageProps} />
+    <div className="bg-gray-200 ">
+      <div className="mx-auto max-w-7xl px-4 ">
+        <Navbar />
+        <div>
+          <Component {...pageProps} />
+        </div>
+      </div>
     </div>
   )
 }
