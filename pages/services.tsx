@@ -13,7 +13,6 @@ export default function Services() {
             className="flex justify-start pt-2 pb-4"
           >
             <Tabs.Tab label="Services"></Tabs.Tab>
-            <Tabs.Tab label="Book a Test"></Tabs.Tab>
             <Tabs.Tab label="Request Consultation"></Tabs.Tab>
           </Tabs>
           <div className="grid grid-cols-3 gap-8">
