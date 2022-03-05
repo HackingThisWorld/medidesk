@@ -56,7 +56,7 @@
 .composition {
   position: relative;
 }
-.composition__photo {
+.compositionPhoto {
   width: 55%;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   border-radius: 2px;
@@ -66,58 +66,58 @@
   outline-offset: 2rem;
 }
 @media (max-width: 56.25em) {
-  .composition__photo {
+  .compositionPhoto {
     float: left;
     position: relative;
     width: 33.33333%;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
   }
 }
-.composition__photo--p1 {
+.compositionPhoto-p1 {
   left: 0;
   top: 0;
 }
 @media (max-width: 56.25em) {
-  .composition__photo--p1 {
+  .compositionPhoto-p1 {
     top: 0;
     transform: scale(1.2);
   }
 }
-.composition__photo--p2 {
+.compositionPhoto-p2 {
   right: 0;
   top: 6rem;
 }
 @media (max-width: 56.25em) {
-  .composition__photo--p2 {
+  .compositionPhoto-p2 {
     top: -1rem;
     right: 0rem;
     z-index: 11;
     transform: scale(1.3);
   }
 }
-.composition__photo--p3 {
+.compositionPhoto-p3 {
   top: 13rem;
   left: 6rem;
 }
 @media (max-width: 56.25em) {
-  .composition__photo--p3 {
+  .compositionPhoto-p3 {
     top: 1rem;
     left: 0rem;
     transform: scale(1.1);
   }
 }
-.composition__photo:hover {
+.compositionPhoto:hover {
   outline: 1.5rem solid #55c57a;
   transform: scale(1.1) translateY(-5px);
   box-shadow: 0 22.5rem 4rem rgba(0, 0, 0, 0.5);
   z-index: 20;
 }
 @media (max-width: 56.25em) {
-  .composition__photo:hover {
+  .compositionPhoto:hover {
     transform: scale(1.4) translateY(-5px);
   }
 }
-.composition:hover .composition__photo:not(:hover) {
+.composition:hover .compositionPhoto:not(:hover) {
   transform: scale(0.9);
 }
 
@@ -203,12 +203,6 @@
   /* width: 100%; */
   word-wrap: break-word;
 }
-
-/* img {
-  border-radius: 50%;
-
-  margin-right: 20px;
-} */
 
 .rp {
   font-weight: 500;

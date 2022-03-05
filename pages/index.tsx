@@ -282,17 +282,17 @@ export default function Example() {
                 <img
                   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
                   alt="P1"
-                  className="composition__photo composition__photo--p1"
+                  className="compositionPhoto compositionPhoto-p1"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
                   alt="P2"
-                  className="composition__photo composition__photo--p2"
+                  className="compositionPhoto compositionPhoto-p2"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
                   alt="P3"
-                  className="composition__photo composition__photo--p3"
+                  className="compositionPhoto compositionPhoto-p3"
                 />
               </div>
             </div>
