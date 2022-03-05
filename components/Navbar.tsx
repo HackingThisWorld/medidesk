@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 export default function Navbar() {
   const router = useRouter()
   return (
-    <div className="py-4">
+    <div className="py-4 mx-auto max-w-7xl px-4">
       <div className="flex items-center justify-between">
         <div className="flex gap-6">
           <div className="flex cursor-pointer items-center gap-2">
