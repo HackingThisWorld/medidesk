@@ -1,25 +1,14 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
 import {
-  AnnotationIcon,
-  ChatAlt2Icon,
-  ChatAltIcon,
-  DocumentReportIcon,
-  HeartIcon,
   InboxIcon,
-  MenuIcon,
   PencilAltIcon,
-  QuestionMarkCircleIcon,
-  ReplyIcon,
-  SparklesIcon,
   TrashIcon,
   UsersIcon,
-  XIcon,
 } from '@heroicons/react/outline'
 import { Button } from '@mantine/core'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 import CTA from '../components/CTA'
 import Info from '../components/Info'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 const features = [
   {
@@ -166,6 +155,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function HomePage() {
+  const { data: session, status } = useSession()
   return (
     <div className="mt-3 bg-white">
       <main>
@@ -176,7 +166,7 @@ export default function HomePage() {
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  className="h-full w-full object-cover opacity-70"
+                  className="h-full w-full object-cover opacity-70 blur-[3px]"
                   src="https://t4.ftcdn.net/jpg/01/97/32/75/360_F_197327562_uPpQ7QhNyCmFBxkxv1XKefE5kLx2LfK5.jpg"
                   alt="People working on laptops"
                 />
@@ -184,26 +174,27 @@ export default function HomePage() {
               </div>
               <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                 <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                  <span className="block text-white ">Virtual healthcare</span>
-                  <span className="block text-indigo-200">for you.</span>
+                  <span className="block text-slate-700 ">
+                    Virtual healthcare
+                  </span>
+                  <span className="block text-green-700">for you.</span>
                 </h1>
-                <p className="mx-auto mt-6 max-w-lg text-center text-2xl font-semibold text-green-800 sm:max-w-3xl">
+                <p className="text-slte-700 mx-auto mt-6 max-w-lg text-center text-2xl font-semibold sm:max-w-3xl">
                   Prediction or detection of various medical ailments.
                   healthcare, accessible online for everyone
                 </p>
                 <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                   <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-indigo-50 sm:px-8"
-                    >
-                      Get started
-                    </a>
+                    <Link href="/services">
+                      <a className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-indigo-50 sm:px-8">
+                        Services
+                      </a>
+                    </Link>
                     <a
                       href="#"
                       className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
                     >
-                      Live demo
+                      About Us
                     </a>
                   </div>
                 </div>
@@ -369,18 +360,24 @@ export default function HomePage() {
               </span>
             </h2>
             <div className="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
+              {status === 'authenticated' ? (
+                <></>
+              ) : (
+                <>
+                  <a
+                    href="#"
+                    className="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100"
+                  >
+                    Sign Up
+                  </a>
+                </>
+              )}
               <Button
                 size="lg"
                 className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
               >
                 Contact Us
               </Button>
-              <a
-                href="#"
-                className="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100"
-              >
-                Register Your Lab
-              </a>
             </div>
           </div>
         </div>
