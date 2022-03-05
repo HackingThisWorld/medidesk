@@ -8,14 +8,15 @@ export default function Services() {
         <div className="min-h-screen">
           <Tabs
             classNames={{
-              tabLabel: 'text-lg font-medium',
+              tabLabel: 'text-md font-base',
             }}
             className="flex justify-start pt-2 pb-4"
           >
             <Tabs.Tab label="Services"></Tabs.Tab>
-            <Tabs.Tab label="Upload Test"></Tabs.Tab>
+            <Tabs.Tab label="Book a Test"></Tabs.Tab>
+            <Tabs.Tab label="Request Consultation"></Tabs.Tab>
           </Tabs>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-3 gap-8">
             {new Array(5).fill(0).map(() => (
               <ServiceCard />
             ))}
