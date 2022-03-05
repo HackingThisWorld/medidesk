@@ -5,11 +5,11 @@ import Navbar from '../components/Navbar'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="">
-      <div className="">
+      <div>
         <Navbar />
-        <div>
-          <Component {...pageProps} />
-        </div>
+      </div>
+      <div>
+        <Component {...pageProps} />
       </div>
     </div>
   )

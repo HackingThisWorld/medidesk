@@ -16,7 +16,10 @@ import {
   UsersIcon,
   XIcon,
 } from '@heroicons/react/outline'
+import { Button } from '@mantine/core'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import CTA from '../components/CTA'
+import Info from '../components/Info'
 
 const features = [
   {
@@ -162,18 +165,18 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function HomePage() {
   return (
     <div className="mt-3 bg-white">
       <main>
         {/* Hero section */}
-        <div className="relative">
+        <div className="relative mt-10">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  className="h-full w-full object-fill"
+                  className="h-full w-full object-cover opacity-70"
                   src="https://t4.ftcdn.net/jpg/01/97/32/75/360_F_197327562_uPpQ7QhNyCmFBxkxv1XKefE5kLx2LfK5.jpg"
                   alt="People working on laptops"
                 />
@@ -184,7 +187,7 @@ export default function Example() {
                   <span className="block text-white ">Virtual healthcare</span>
                   <span className="block text-indigo-200">for you.</span>
                 </h1>
-                <p className="mx-auto mt-6 max-w-lg text-center text-xl text-indigo-200 sm:max-w-3xl">
+                <p className="mx-auto mt-6 max-w-lg text-center text-2xl font-semibold text-green-800 sm:max-w-3xl">
                   Prediction or detection of various medical ailments.
                   healthcare, accessible online for everyone
                 </p>
@@ -192,13 +195,13 @@ export default function Example() {
                   <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                     <a
                       href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-indigo-700 shadow-sm hover:bg-indigo-50 sm:px-8"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-indigo-50 sm:px-8"
                     >
                       Get started
                     </a>
                     <a
                       href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#f88ecb] to-[#37d7ff] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
                     >
                       Live demo
                     </a>
@@ -209,147 +212,11 @@ export default function Example() {
           </div>
         </div>
 
-        {/* Logo Cloud */}
-        <div className="bg-gray-100">
-          <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-sm font-semibold uppercase tracking-wide text-gray-500">
-              Trusted by over 5 very average small businesses
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-              <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-                  alt="Tuple"
-                />
-              </div>
-              <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-                  alt="Mirage"
-                />
-              </div>
-              <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                  alt="StaticKit"
-                />
-              </div>
-              <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                  alt="Transistor"
-                />
-              </div>
-              <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                  alt="Workcation"
-                />
-              </div>
-            </div>
-          </div>
-          {/* Hero Section 2 */}
-          <section className="section-about max-w-9xl m-auto flex">
-            <div className="m-auto w-1/2 p-4">
-              <div className="">
-                <h2 className="heading-secondry">Inspiring Lives.</h2>
-              </div>
-              <div className="p2-4 flex">
-                <div className=" text-yellow-500">
-                  <h3 className="heading-tertiary ">Love your Life.</h3>
-                  <p className="paragraph">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Dolorem eveniet incidunt quis nostrum repellat dignissimos,
-                    magni quasi, libero omnis nobis laboriosam beatae at
-                    consequatur alias! Soluta repellendus dolorem obcaecati
-                    minima?
-                  </p>
-                  <h3 className="heading-tertiary ">Live with Adventures.</h3>
-                  <p className="paragraph">
-                    Lorem ipsum dolor sit,dlad consectetur adipisicing elit.
-                    Dolorem eveniet incidunt quis nostrum repellat dignissimos,
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="m-auto w-2/5 self-start">
-              <div className="composition">
-                <img
-                  src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                  alt="P1"
-                  className="compositionPhoto compositionPhoto-p1"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                  alt="P2"
-                  className="compositionPhoto compositionPhoto-p2"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                  alt="P3"
-                  className="compositionPhoto compositionPhoto-p3"
-                />
-              </div>
-            </div>
-          </section>
-        </div>
+        <CTA />
 
-        {/* Stats section */}
-        <div className="relative bg-[#26AB7B]">
-          <div className="absolute inset-x-0 bottom-0 h-80 xl:top-0 xl:h-full">
-            <div className="h-full w-full xl:grid xl:grid-cols-2">
-              <div className="h-full xl:relative xl:col-start-2">
-                <img
-                  className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
-                  src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                  alt="People working on laptops"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-flow-col-dense xl:grid-cols-2 xl:gap-x-8">
-            <div className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
-              <h2 className="text-sm font-semibold uppercase tracking-wide">
-                <span className="bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">
-                  Valuable Metrics
-                </span>
-              </h2>
-              <p className="mt-3 text-3xl font-extrabold text-white">
-                Get actionable data that will help grow your business
-              </p>
-              <p className="mt-5 text-lg text-gray-300">
-                Rhoncus sagittis risus arcu erat lectus bibendum. Ut in
-                adipiscing quis in viverra tristique sem. Ornare feugiat viverra
-                eleifend fusce orci in quis amet. Sit in et vitae tortor, massa.
-                Dapibus laoreet amet lacus nibh integer quis. Eu vulputate diam
-                sit tellus quis at.
-              </p>
-              <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
-                {metrics.map((item) => (
-                  <p key={item.id}>
-                    <span className="block text-2xl font-bold text-white">
-                      {item.stat}
-                    </span>
-                    <span className="mt-1 block text-base text-gray-300">
-                      <span className="font-medium text-white">
-                        {item.emphasis}
-                      </span>{' '}
-                      {item.rest}
-                    </span>
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <Info />
         {/* Gradient Feature Section */}
-        <div className="bg-[#000]">
+        <div className="fro mx-auto mb-20 w-11/12 rounded-[1.5rem] bg-gradient-to-r from-[#26AB7B] to-[#229c70]">
           <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
             <h2 className="text-3xl font-extrabold tracking-tight text-white">
               Inbox support built for efficiency
@@ -385,107 +252,109 @@ export default function Example() {
         </div>
 
         {/* testimonial section */}
-        <div className="parent">
-          <div className="div1 shell">
-            <div className="head">
-              <img src="./images/image-daniel.jpg" alt="" />
-              <div>
-                Daniel Clifford
-                <div className="head1">Verified Graduate</div>
-              </div>
-            </div>
-            <div className="statement">
-              I received a job offer mid-course, and the subjects I learned were
-              current, if not more so, in the company I joined. I honestly feel
-              I got every penny’s worth.
-            </div>
-            <div className="content">
-              “ I was an EMT for many years before I joined the bootcamp. I’ve
-              been looking to make a transition and have heard some people who
-              had an amazing experience here. I signed up for the free intro
-              course and found it incredibly fun! I enrolled shortly thereafter.
-              The next 12 weeks was the best - and most grueling - time of my
-              life. Since completing the course, I’ve successfully switched
-              careers, working as a Software Engineer at a VR startup. ”
-            </div>
+        <div className="mx-auto md:px-2 lg:w-4/5">
+          <div className="mx-auto mb-5 border-b-4 border-b-gray-200 px-4 text-center text-5xl font-bold md:mb-10 md:w-1/2">
+            <h1 className="text-2xl lg:text-5xl">Our Client Reviews</h1>
           </div>
-          <div className="div4 shell">
-            <div className="head">
-              <img src="./images/image-jonathan.jpg" alt="" />
-              <div>
-                Jonathan Walters
-                <div className="head1">Verified Graduate</div>
+          <div className="parent">
+            <div className="div1 shell hover:shadow-2xl">
+              <div className="head">
+                <img src="./images/image-daniel.jpg" alt="" />
+                <div>
+                  Daniel Clifford
+                  <div className="head1">Verified Graduate</div>
+                </div>
+              </div>
+              <div className="statement">
+                I received a job offer mid-course, and the subjects I learned
+                were current, if not more so, in the company I joined. I
+                honestly feel I got every penny&apos;s worth.
+              </div>
+              <div className="content">
+                “ I was an EMT for many years before I joined the bootcamp.
+                I&apos;ve been looking to make a transition and have heard some
+                people who had an amazing experience here. I signed up for the
+                free intro course and found it incredibly fun! I enrolled
+                shortly thereafter. The next 12 weeks was the best - and most
+                grueling - time of my life. Since completing the course,
+                I&apos;ve successfully switched careers, working as a Software
+                Engineer at a VR startup. ”
               </div>
             </div>
-            <div className="statement">
-              The team was very supportive and kept me motivated
-            </div>
-            <div className="content">
-              “ I started as a total newbie with virtually no coding skills. I
-              now work as a mobile engineer for a big company. This was one of
-              the best investments I’ve made in myself. ”
-            </div>
-          </div>
-          <div className="div3 shell">
-            <div className="head">
-              <img src="./images/image-jeanette.jpg" alt="" />
-              <div>
-                Jeanette Harmon
-                <div className="head1">Verified Graduate</div>
+            <div className="div4 shell">
+              <div className="head">
+                <img src="./images/image-jonathan.jpg" alt="" />
+                <div>
+                  Jonathan Walters
+                  <div className="head1">Verified Graduate</div>
+                </div>
+              </div>
+              <div className="statement">
+                The team was very supportive and kept me motivated
+              </div>
+              <div className="content">
+                “ I started as a total newbie with virtually no coding skills. I
+                now work as a mobile engineer for a big company. This was one of
+                the best investments I&apos;ve made in myself. ”
               </div>
             </div>
-            <div className="statement">
-              An overall wonderful and rewarding experience
-            </div>
-            <div className="content rp">
-              “ Thank you for the wonderful experience! I now have a job I
-              really enjoy, and make a good living while doing something I love.
-              ”
-            </div>
-          </div>
-          <div className="div2 shell">
-            <div className="head">
-              <img src="./images/image-patrick.jpg" alt="" />
-              <div>
-                Patrick Abrams
-                <div>Verified Graduate</div>
+            <div className="div3 shell">
+              <div className="head">
+                <img src="./images/image-jeanette.jpg" alt="" />
+                <div>
+                  Jeanette Harmon
+                  <div className="head1">Verified Graduate</div>
+                </div>
+              </div>
+              <div className="statement">
+                An overall wonderful and rewarding experience
+              </div>
+              <div className="content rp">
+                “ Thank you for the wonderful experience! I now have a job I
+                really enjoy, and make a good living while doing something I
+                love. ”
               </div>
             </div>
-            <div className="statement">
-              Awesome teaching support from TAs who did the bootcamp themselves.
-              Getting guidance from them and learning from their experiences was
-              easy.
-            </div>
-            <div className="content">
-              “ The staff seem genuinely concerned about my progress which I
-              find really refreshing. The program gave me the confidence
-              necessary to be able to go out in the world and present myself as
-              a capable junior developer. The standard is above the rest. You
-              will get the personal attention you need from an incredible
-              community of smart and amazing people. ”
-            </div>
-          </div>
-          <div className="div5 shell">
-            <div className="head">
-              <img src="./images/image-kira.jpg" alt="" />
-              <div>
-                Kira Whittle
-                <div>Verified Graduate</div>
+            <div className="div2 shell">
+              <div className="head">
+                <img src="./images/image-patrick.jpg" alt="" />
+                <div>
+                  Patrick Abrams
+                  <div>Verified Graduate</div>
+                </div>
+              </div>
+              <div className="statement">
+                Awesome teaching support from TAs who did the bootcamp
+                themselves. Getting guidance from them and learning from their
+                experiences was easy.
+              </div>
+              <div className="content">
+                “ The staff seem genuinely concerned about my progress which I
+                find really refreshing. The program gave me the confidence
+                necessary to be able to go out in the world and present myself
+                as a capable junior developer. The standard is above the rest.
+                You will get the personal attention you need from an incredible
+                community of smart and amazing people. ”
               </div>
             </div>
-            <div className="statement">
-              Such a life-changing experience. Highly recommended!
-            </div>
-            <div className="content rp">
-              “ Before joining the bootcamp, I’ve never written a line of code.
-              I needed some structure from professionals who can help me learn
-              programming step by step. I was encouraged to enroll by a former
-              student of theirs who can only say wonderful things about the
-              program. The entire curriculum and staff did not disappoint. They
-              were very hands-on and I never had to wait long for assistance.
-              The agile team project, in particular, was outstanding. It took my
-              learning to the next level in a way that no tutorial could ever
-              have. ”
+            <div className="div5 shell">
+              <div className="head">
+                <img src="./images/image-kira.jpg" alt="" />
+                <div>
+                  Kira Whittle
+                  <div>Verified Graduate</div>
+                </div>
+              </div>
+              <div className="statement">
+                Such a life-changing experience. Highly recommended!
+              </div>
+              <div className="content rp">
+                “ Before joining the bootcamp, I’ve never written a line of
+                code. I needed some structure from professionals who can help me
+                learn programming step by step. I was encouraged to enroll by a
+                former student of theirs who can only say wonderful things about
+                the program. The entire curriculum and staff did not disappoint.
+              </div>
             </div>
           </div>
         </div>
@@ -494,23 +363,23 @@ export default function Example() {
         <div className="bg-white">
           <div className="mx-auto max-w-4xl py-16 px-4 sm:px-6 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
             <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to get started?</span>
-              <span className="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="block">Ready to join us?</span>
+              <span className="block bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-clip-text text-transparent">
                 Get in touch or create an account.
               </span>
             </h2>
             <div className="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
-              <a
-                href="#"
-                className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700"
+              <Button
+                size="lg"
+                className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
               >
-                Learn more
-              </a>
+                Contact Us
+              </Button>
               <a
                 href="#"
                 className="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100"
               >
-                Get started
+                Sign Up
               </a>
             </div>
           </div>
@@ -605,7 +474,7 @@ export default function Example() {
                 <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
                   >
                     Subscribe
                   </button>
