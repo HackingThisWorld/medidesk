@@ -253,7 +253,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-        {/* Hero Section 2 */}
+          {/* Hero Section 2 */}
           <section className="section-about max-w-9xl m-auto flex">
             <div className="m-auto w-1/2 p-4">
               <div className="">
