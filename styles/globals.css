@@ -25,7 +25,6 @@
   transform-origin: bottom left;
 }
 
-
 .section-about {
   background-color: #f7f7f7;
   padding: 20rem 0;
@@ -167,17 +166,14 @@
   color: hsl(228, 45%, 44%);
 }
 
-
-/* testimonial section */
 .parent {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  /* grid-column-gap: 0px;
+  grid-row-gap: 0px; */
   gap: 25px;
   padding: 5px;
-  height: 100vh;
-  width: 80rem;
-  margin: auto;
 }
 
 .shell {
@@ -223,9 +219,7 @@
 
 .div1 {
   grid-area: 1 / 1 / 2 / 3;
-  background-color: hsl(263, 55%, 52%);
-  color: white;
-  background-image: url("./images/bg-pattern-quotation.svg");
+  color: black;
   background-repeat: no-repeat;
   background-size: 20%;
   background-position: top 0px right 130px;
@@ -251,14 +245,25 @@
   color: black;
 }
 
-@media (max-width: 900px) {
+/* :where(.div1, .div2, .div3, .div4, .div5) :hover {
+  box-shadow: 0px 2px 15px -2px hsl(263, 55%, 52%);
+} */
 
+@media (max-width: 500px) {
+  body {
+    padding: 0;
+    margin: 10px;
+    height: 100vh;
+    overflow: scroll;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: hsl(210, 46%, 95%);
+  }
   .parent {
     display: flex;
     flex-direction: column;
   }
   .div1 {
-    background-image: url("./images/bg-pattern-quotation.svg");
+    background-image: url('./images/bg-pattern-quotation.svg');
     background-repeat: no-repeat;
     background-size: 30%;
     background-position: top 0px right 20px;
