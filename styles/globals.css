@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* Services page */
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -30,7 +30,6 @@
   background-color: #f7f7f7;
   padding: 20rem 0;
   margin-top: -40vh;
-  /* margin-bottom: 10vh; */
 }
 
 .section-feature {
@@ -53,6 +52,7 @@
   }
 }
 
+/* Hero Section 2 */
 .composition {
   position: relative;
 }
