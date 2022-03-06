@@ -1,25 +1,18 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
 import {
-  AnnotationIcon,
-  ChatAlt2Icon,
-  ChatAltIcon,
-  DocumentReportIcon,
-  HeartIcon,
   InboxIcon,
-  MenuIcon,
   PencilAltIcon,
-  QuestionMarkCircleIcon,
-  ReplyIcon,
-  SparklesIcon,
   TrashIcon,
   UsersIcon,
-  XIcon,
 } from '@heroicons/react/outline'
 import { Button } from '@mantine/core'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 import CTA from '../components/CTA'
 import Info from '../components/Info'
+import React, { useState } from 'react'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { Modal } from '@mantine/core'
+import ContactUs from '../components/ContactUs'
+import LabSignUp from '../components/LabSignUp'
 
 const features = [
   {
@@ -45,32 +38,7 @@ const features = [
     icon: PencilAltIcon,
   },
 ]
-const metrics = [
-  {
-    id: 1,
-    stat: '8K+',
-    emphasis: 'Companies',
-    rest: 'use laoreet amet lacus nibh integer quis.',
-  },
-  {
-    id: 2,
-    stat: '25K+',
-    emphasis: 'Countries around the globe',
-    rest: 'lacus nibh integer quis.',
-  },
-  {
-    id: 3,
-    stat: '98%',
-    emphasis: 'Customer satisfaction',
-    rest: 'laoreet amet lacus nibh integer quis.',
-  },
-  {
-    id: 4,
-    stat: '12M+',
-    emphasis: 'Issues resolved',
-    rest: 'lacus nibh integer quis.',
-  },
-]
+
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -166,341 +134,374 @@ function classNames(...classes: string[]) {
 }
 
 export default function HomePage() {
+  const { data: session, status } = useSession()
+  const [opened, setOpened] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="mt-3 bg-white">
-      <main>
-        {/* Hero section */}
-        <div className="relative mt-10">
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-              <div className="absolute inset-0">
-                <img
-                  className="h-full w-full object-cover opacity-70"
-                  src="https://t4.ftcdn.net/jpg/01/97/32/75/360_F_197327562_uPpQ7QhNyCmFBxkxv1XKefE5kLx2LfK5.jpg"
-                  alt="People working on laptops"
-                />
-                <div className="absolute inset-0 " />
-              </div>
-              <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                  <span className="block text-white ">Virtual healthcare</span>
-                  <span className="block text-indigo-200">for you.</span>
-                </h1>
-                <p className="mx-auto mt-6 max-w-lg text-center text-2xl font-semibold text-green-800 sm:max-w-3xl">
-                  Prediction or detection of various medical ailments.
-                  healthcare, accessible online for everyone
-                </p>
-                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-                  <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-indigo-50 sm:px-8"
-                    >
-                      Get started
-                    </a>
-                    <a
-                      href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
-                    >
-                      Live demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <>
+      <Modal
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Lab Sign In"
+      >
+        <div>
+          <ContactUs />
         </div>
-
-        <CTA />
-
-        <Info />
-        {/* Gradient Feature Section */}
-        <div className="fro mx-auto mb-20 w-11/12 rounded-[1.5rem] bg-gradient-to-r from-[#26AB7B] to-[#229c70]">
-          <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white">
-              Inbox support built for efficiency
-            </h2>
-            <p className="mt-4 max-w-3xl text-lg text-purple-200">
-              Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
-              magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis
-              in.
-            </p>
-            <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
-              {features.map((feature) => (
-                <div key={feature.name}>
-                  <div>
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10">
-                      <feature.icon
-                        className="h-6 w-6 text-white"
-                        aria-hidden="true"
-                      />
+      </Modal>
+      <Modal
+        opened={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Lab Sign In"
+      >
+        <div>
+          <LabSignUp />
+        </div>
+      </Modal>
+      <div className="mt-3 bg-white">
+        <main>
+          {/* Hero section */}
+          <div className="relative mt-10">
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
+            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+              <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
+                <div className="absolute inset-0">
+                  <img
+                    className="h-full w-full object-cover opacity-70 blur-[3px]"
+                    src="https://t4.ftcdn.net/jpg/01/97/32/75/360_F_197327562_uPpQ7QhNyCmFBxkxv1XKefE5kLx2LfK5.jpg"
+                    alt="People working on laptops"
+                  />
+                  <div className="absolute inset-0 " />
+                </div>
+                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    <span className="block text-slate-700 ">
+                      Virtual healthcare
                     </span>
+                    <span className="block text-green-700">for you.</span>
+                  </h1>
+                  <p className="text-slte-700 mx-auto mt-6 max-w-lg text-center text-2xl font-semibold sm:max-w-3xl">
+                    Prediction or detection of various medical ailments.
+                    healthcare, accessible online for everyone
+                  </p>
+                  <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+                    <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
+                      <Link href="/services">
+                        <a className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-indigo-50 sm:px-8">
+                          Services
+                        </a>
+                      </Link>
+                      <a
+                        href="#"
+                        className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
+                      >
+                        About Us
+                      </a>
+                    </div>
                   </div>
-                  <div className="mt-6">
-                    <h3 className="text-lg font-medium text-white">
-                      {feature.name}
-                    </h3>
-                    <p className="mt-2 text-base text-purple-200">
-                      {feature.description}
-                    </p>
-                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* testimonial section */}
-        <div className="mx-auto md:px-2 lg:w-4/5">
-          <div className="mx-auto mb-5 border-b-4 border-b-gray-200 px-4 text-center text-5xl font-bold md:mb-10 md:w-1/2">
-            <h1 className="text-2xl lg:text-5xl">Our Client Reviews</h1>
-          </div>
-          <div className="parent">
-            <div className="div1 shell hover:shadow-2xl">
-              <div className="head">
-                <img src="./images/image-daniel.jpg" alt="" />
-                <div>
-                  Daniel Clifford
-                  <div className="head1">Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                I received a job offer mid-course, and the subjects I learned
-                were current, if not more so, in the company I joined. I
-                honestly feel I got every penny&apos;s worth.
-              </div>
-              <div className="content">
-                “ I was an EMT for many years before I joined the bootcamp.
-                I&apos;ve been looking to make a transition and have heard some
-                people who had an amazing experience here. I signed up for the
-                free intro course and found it incredibly fun! I enrolled
-                shortly thereafter. The next 12 weeks was the best - and most
-                grueling - time of my life. Since completing the course,
-                I&apos;ve successfully switched careers, working as a Software
-                Engineer at a VR startup. ”
-              </div>
-            </div>
-            <div className="div4 shell">
-              <div className="head">
-                <img src="./images/image-jonathan.jpg" alt="" />
-                <div>
-                  Jonathan Walters
-                  <div className="head1">Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                The team was very supportive and kept me motivated
-              </div>
-              <div className="content">
-                “ I started as a total newbie with virtually no coding skills. I
-                now work as a mobile engineer for a big company. This was one of
-                the best investments I&apos;ve made in myself. ”
-              </div>
-            </div>
-            <div className="div3 shell">
-              <div className="head">
-                <img src="./images/image-jeanette.jpg" alt="" />
-                <div>
-                  Jeanette Harmon
-                  <div className="head1">Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                An overall wonderful and rewarding experience
-              </div>
-              <div className="content rp">
-                “ Thank you for the wonderful experience! I now have a job I
-                really enjoy, and make a good living while doing something I
-                love. ”
-              </div>
-            </div>
-            <div className="div2 shell">
-              <div className="head">
-                <img src="./images/image-patrick.jpg" alt="" />
-                <div>
-                  Patrick Abrams
-                  <div>Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                Awesome teaching support from TAs who did the bootcamp
-                themselves. Getting guidance from them and learning from their
-                experiences was easy.
-              </div>
-              <div className="content">
-                “ The staff seem genuinely concerned about my progress which I
-                find really refreshing. The program gave me the confidence
-                necessary to be able to go out in the world and present myself
-                as a capable junior developer. The standard is above the rest.
-                You will get the personal attention you need from an incredible
-                community of smart and amazing people. ”
-              </div>
-            </div>
-            <div className="div5 shell">
-              <div className="head">
-                <img src="./images/image-kira.jpg" alt="" />
-                <div>
-                  Kira Whittle
-                  <div>Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                Such a life-changing experience. Highly recommended!
-              </div>
-              <div className="content rp">
-                “ Before joining the bootcamp, I’ve never written a line of
-                code. I needed some structure from professionals who can help me
-                learn programming step by step. I was encouraged to enroll by a
-                former student of theirs who can only say wonderful things about
-                the program. The entire curriculum and staff did not disappoint.
-              </div>
-            </div>
-          </div>
-        </div>
+          <CTA />
 
-        {/* CTA Section */}
-        <div className="bg-white">
-          <div className="mx-auto max-w-4xl py-16 px-4 sm:px-6 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to join us?</span>
-              <span className="block bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-clip-text text-transparent">
-                Get in touch or create an account.
-              </span>
-            </h2>
-            <div className="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
-              <Button
-                size="lg"
-                className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
-              >
-                Contact Us
-              </Button>
-              <a
-                href="#"
-                className="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100"
-              >
-                Register Your Lab
-              </a>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      {/* Footer Section */}
-      <footer className="bg-gray-50" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:pt-24">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                    Solutions
-                  </h3>
-                  <ul role="list" className="mt-4 space-y-4">
-                    {footerNavigation.solutions.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-12 md:mt-0">
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                    Support
-                  </h3>
-                  <ul role="list" className="mt-4 space-y-4">
-                    {footerNavigation.support.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div className="mt-12 md:mt-0">
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                    Legal
-                  </h3>
-                  <ul role="list" className="mt-4 space-y-4">
-                    {footerNavigation.legal.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12 xl:mt-0">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                Subscribe to our newsletter
-              </h3>
-              <p className="mt-4 text-base text-gray-500">
-                The latest news, articles, and resources, sent to your inbox
-                weekly.
+          <Info />
+          {/* Gradient Feature Section */}
+          <div className="fro mx-auto mb-20 w-11/12 rounded-[1.5rem] bg-gradient-to-r from-[#26AB7B] to-[#229c70]">
+            <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
+              <h2 className="text-3xl font-extrabold tracking-tight text-white">
+                Inbox support built for efficiency
+              </h2>
+              <p className="mt-4 max-w-3xl text-lg text-purple-200">
+                Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
+                Et magna sit morbi lobortis. Blandit aliquam sit nisl euismod
+                mattis in.
               </p>
-              <form className="mt-4 sm:flex sm:max-w-md">
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  name="email-address"
-                  id="email-address"
-                  autoComplete="email"
-                  required
-                  className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
-                  placeholder="Enter your email"
-                />
-                <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                  <button
-                    type="submit"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
-                  >
-                    Subscribe
-                  </button>
+              <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+                {features.map((feature) => (
+                  <div key={feature.name}>
+                    <div>
+                      <span className="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10">
+                        <feature.icon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </div>
+                    <div className="mt-6">
+                      <h3 className="text-lg font-medium text-white">
+                        {feature.name}
+                      </h3>
+                      <p className="mt-2 text-base text-purple-200">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* testimonial section */}
+          <div className="mx-auto md:px-2 lg:w-4/5">
+            <div className="mx-auto mb-5 border-b-4 border-b-gray-200 px-4 text-center text-5xl font-bold md:mb-10 md:w-1/2">
+              <h1 className="text-2xl lg:text-5xl">Our Client Reviews</h1>
+            </div>
+            <div className="parent">
+              <div className="div1 shell hover:shadow-2xl">
+                <div className="head">
+                  <img src="./images/image-daniel.jpg" alt="" />
+                  <div>
+                    Daniel Clifford
+                    <div className="head1">Verified Graduate</div>
+                  </div>
                 </div>
-              </form>
+                <div className="statement">
+                  I received a job offer mid-course, and the subjects I learned
+                  were current, if not more so, in the company I joined. I
+                  honestly feel I got every penny&apos;s worth.
+                </div>
+                <div className="content">
+                  “ I was an EMT for many years before I joined the bootcamp.
+                  I&apos;ve been looking to make a transition and have heard
+                  some people who had an amazing experience here. I signed up
+                  for the free intro course and found it incredibly fun! I
+                  enrolled shortly thereafter. The next 12 weeks was the best -
+                  and most grueling - time of my life. Since completing the
+                  course, I&apos;ve successfully switched careers, working as a
+                  Software Engineer at a VR startup. ”
+                </div>
+              </div>
+              <div className="div4 shell">
+                <div className="head">
+                  <img src="./images/image-jonathan.jpg" alt="" />
+                  <div>
+                    Jonathan Walters
+                    <div className="head1">Verified Graduate</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  The team was very supportive and kept me motivated
+                </div>
+                <div className="content">
+                  “ I started as a total newbie with virtually no coding skills.
+                  I now work as a mobile engineer for a big company. This was
+                  one of the best investments I&apos;ve made in myself. ”
+                </div>
+              </div>
+              <div className="div3 shell">
+                <div className="head">
+                  <img src="./images/image-jeanette.jpg" alt="" />
+                  <div>
+                    Jeanette Harmon
+                    <div className="head1">Verified Graduate</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  An overall wonderful and rewarding experience
+                </div>
+                <div className="content rp">
+                  “ Thank you for the wonderful experience! I now have a job I
+                  really enjoy, and make a good living while doing something I
+                  love. ”
+                </div>
+              </div>
+              <div className="div2 shell">
+                <div className="head">
+                  <img src="./images/image-patrick.jpg" alt="" />
+                  <div>
+                    Patrick Abrams
+                    <div>Verified Graduate</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  Awesome teaching support from TAs who did the bootcamp
+                  themselves. Getting guidance from them and learning from their
+                  experiences was easy.
+                </div>
+                <div className="content">
+                  “ The staff seem genuinely concerned about my progress which I
+                  find really refreshing. The program gave me the confidence
+                  necessary to be able to go out in the world and present myself
+                  as a capable junior developer. The standard is above the rest.
+                  You will get the personal attention you need from an
+                  incredible community of smart and amazing people. ”
+                </div>
+              </div>
+              <div className="div5 shell">
+                <div className="head">
+                  <img src="./images/image-kira.jpg" alt="" />
+                  <div>
+                    Kira Whittle
+                    <div>Verified Graduate</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  Such a life-changing experience. Highly recommended!
+                </div>
+                <div className="content rp">
+                  “ Before joining the bootcamp, I’ve never written a line of
+                  code. I needed some structure from professionals who can help
+                  me learn programming step by step. I was encouraged to enroll
+                  by a former student of theirs who can only say wonderful
+                  things about the program. The entire curriculum and staff did
+                  not disappoint.
+                </div>
+              </div>
             </div>
           </div>
-          <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between lg:mt-16">
-            <div className="flex space-x-6 md:order-2">
-              {footerNavigation.social.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-400 hover:text-gray-500"
+
+          {/* CTA Section */}
+          <div className="bg-white">
+            <div className="mx-auto max-w-4xl py-16 px-4 sm:px-6 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
+              <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                <span className="block">Ready to join us?</span>
+                <span className="block bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-clip-text text-transparent">
+                  Get in touch or create an account.
+                </span>
+              </h2>
+              <div className="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
+                {status === 'authenticated' ? (
+                  <></>
+                ) : (
+                  <>
+                    <Button
+                      size="lg"
+                      onClick={() => setIsOpen(true)}
+                      className="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100"
+                    >
+                      Sign Up for Labs
+                    </Button>
+                  </>
+                )}
+                <Button
+                  size="lg"
+                  onClick={() => setOpened(true)}
+                  className="w-full rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-center text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
                 >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
-                </a>
-              ))}
+                  Contact Us
+                </Button>
+              </div>
             </div>
-            <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
-              &copy; Medicare. All rights reserved.
-            </p>
           </div>
-        </div>
-      </footer>
-    </div>
+        </main>
+
+        {/* Footer Section */}
+        <footer className="bg-gray-50" aria-labelledby="footer-heading">
+          <h2 id="footer-heading" className="sr-only">
+            Footer
+          </h2>
+          <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:pt-24">
+            <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+              <div className="grid grid-cols-2 gap-8 xl:col-span-2">
+                <div className="md:grid md:grid-cols-2 md:gap-8">
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                      Solutions
+                    </h3>
+                    <ul role="list" className="mt-4 space-y-4">
+                      {footerNavigation.solutions.map((item) => (
+                        <li key={item.name}>
+                          <a
+                            href={item.href}
+                            className="text-base text-gray-500 hover:text-gray-900"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-12 md:mt-0">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                      Support
+                    </h3>
+                    <ul role="list" className="mt-4 space-y-4">
+                      {footerNavigation.support.map((item) => (
+                        <li key={item.name}>
+                          <a
+                            href={item.href}
+                            className="text-base text-gray-500 hover:text-gray-900"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="md:grid md:grid-cols-2 md:gap-8">
+                  <div className="mt-12 md:mt-0">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                      Legal
+                    </h3>
+                    <ul role="list" className="mt-4 space-y-4">
+                      {footerNavigation.legal.map((item) => (
+                        <li key={item.name}>
+                          <a
+                            href={item.href}
+                            className="text-base text-gray-500 hover:text-gray-900"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-12 xl:mt-0">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                  Subscribe to our newsletter
+                </h3>
+                <p className="mt-4 text-base text-gray-500">
+                  The latest news, articles, and resources, sent to your inbox
+                  weekly.
+                </p>
+                <form className="mt-4 sm:flex sm:max-w-md">
+                  <label htmlFor="email-address" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    name="email-address"
+                    id="email-address"
+                    autoComplete="email"
+                    required
+                    className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
+                    placeholder="Enter your email"
+                  />
+                  <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                    <button
+                      type="submit"
+                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between lg:mt-16">
+              <div className="flex space-x-6 md:order-2">
+                {footerNavigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-400 hover:text-gray-500"
+                  >
+                    <span className="sr-only">{item.name}</span>
+                    <item.icon className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+              <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
+                &copy; Medicare. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
   )
 }
