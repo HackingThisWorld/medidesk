@@ -54,7 +54,7 @@ import { Modal } from '@mantine/core'
 import React, { useState } from 'react'
 import LabSignIn from './LabSignIn'
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -282,7 +282,7 @@ export default function Example() {
                       <div className="flex-shrink-0">
                         <img
                           className="h-10 w-10 rounded-full"
-                          src={session?.user?.image}
+                          src={session?.user?.image!!}
                           alt=""
                         />
                       </div>

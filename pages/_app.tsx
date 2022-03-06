@@ -3,7 +3,17 @@ import type { AppProps } from 'next/app'
 import Navbar from '../components/Navbar'
 import { SessionProvider } from 'next-auth/react'
 
-function App({ Component, pageProps: { session, ...pageProps } }) {
+interface SessionProps extends AppProps {
+  session: any
+}
+
+function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: {
+  Component: any
+  pageProps: SessionProps
+}) {
   return (
     <SessionProvider session={session}>
       <div className="">
