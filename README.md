@@ -1,12 +1,14 @@
 # MediDesk
 
-## Tests and Advice Right At Your Screen using our Platform.
+## Tests and Consultations Right At Your Screen using our Platform.
 
 ![Contributors](https://img.shields.io/github/contributors/HackingThisWorld/medidesk)
 ![Forks](https://img.shields.io/github/forks/HackingThisWorld/medidesk)
 ![Stars](https://img.shields.io/github/stars/HackingThisWorld/medidesk)
 ![Licence](https://img.shields.io/github/license/HackingThisWorld/medidesk)
 ![Issues](https://img.shields.io/github/issues/HackingThisWorld/medidesk)
+
+![Banner](https://media.discordapp.net/attachments/900363233033060395/950036172577591296/medidesk.netlify.app__1.png?width=1433&height=653)
 
 ## Inspiration
 
@@ -35,12 +37,13 @@ It was our first time working with GitHub workflows so that was a new learning e
 
 ## What's next for MediDesk
 
-We will add more features like applying for medical certificates, other appointments for different medical needs will be added. We will also work on providing more refined dashboards to our users and labs for smoother experience.
+We successfully created a prototype of our plateform. Our backend and API's are working due to our API first development approach but due to time constraint we were unable to connect 100% of our frontend with the server so next thing would be connecting the whole plateform with the server.Next we will also add more features like applying for medical certificates, other appointments for different medical needs will be added. We will also work on providing more refined dashboards to our users and labs for smoother experience.
 
-## Demo
+## Preview
 
 ![Home_Page](https://cdn.discordapp.com/attachments/900363233033060395/950002506623242330/unknown.png)
 ![Servies-Section](https://cdn.discordapp.com/attachments/900363233033060395/949930658376073256/unknown.png)
+![Services](https://cdn.discordapp.com/attachments/900363233033060395/950038248590299177/unknown.png)
 ![Client-Review](https://cdn.discordapp.com/attachments/900363233033060395/949931066708340766/unknown.png)
 ![Footer](https://cdn.discordapp.com/attachments/900363233033060395/949933027205738507/unknown.png)
 
@@ -49,7 +52,7 @@ We will add more features like applying for medical certificates, other appointm
 ![Home_Page](https://cdn.discordapp.com/attachments/900363233033060395/950003540976336926/unknown.png)
 ![Servies-Mob](https://cdn.discordapp.com/attachments/900363233033060395/949933859389190184/unknown.png)
 ![Application-Mob](https://cdn.discordapp.com/attachments/900363233033060395/949934867460808704/unknown.png)
-![Footer](https://cdn.discordapp.com/attachments/900363233033060395/949935126807183360/unknown.png)
+![Footer](https://cdn.discordapp.com/attachments/900363233033060395/950037175804780554/unknown.png)
 
 ## Logo
 
@@ -57,7 +60,7 @@ We will add more features like applying for medical certificates, other appointm
 
 ## Authors
 
-- [@Alokpunj](https://github.com/ST1LLWATER)
+- [@AlokPunjSharma](https://github.com/ST1LLWATER)
 - [@SooditKumar](https://github.com/SooditK)
 - [@BuddhadebChhetri](https://github.com/Buddhad)
 - [@PiyushBhangale](https://github.com/officialpiyush)
@@ -67,11 +70,12 @@ We will add more features like applying for medical certificates, other appointm
 
 [MIT](../medidesk/LICENSE)
 
-# ✨ Contributors
-
+ # ✨ Contributors
+<div align="center">
 <a href="https://github.com/HackingThisWorld/medidesk/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=HackingThisWorld/medidesk" />
 </a>
+  </div>
 <div align="center">
  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="love" />
  <img src="https://forthebadge.com/images/badges/thats-how-they-get-you.svg" alt="how">
