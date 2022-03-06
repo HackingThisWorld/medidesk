@@ -10,46 +10,50 @@
 
 ## Inspiration
 
-Due to increase in covid cases, people are now more restricted to staying in their homes now. This caused problems to people with problems like diabetes who needed lab tests to keep track of their condition.
+Due to the increase in covid cases, people are now more restricted to staying in their homes now. This caused problems to people with problems like diabetes who needed lab tests to keep track of their condition and also require occasional consultations from health experts for their health condition.
 
 ## What it does
 
-Our plateform allows labs to register with us and link themselves and people can register and book lab tests for them. The labs registered can see the requests on their dashboard and can co-ordinate with the bookings and send their respective attendants for tests at home.
+Our platform makes it easier for private hospitals, outpatient private clinics etc to manage their clients. Our platform lets users book appointments for lab tests, request health consultation and track their medical history for health advice. We will aggregate the labs providing home services for tests like blood tests etc and connect them with the users present in their city.
 
 ## How we built it
 
-Our tech stack was Nextjs,tailwindcss,nodejs,express,typescript,prisma,postgresql,mantine. We hosted the plateform on Azure services given to students by github, made use of several student perks provided by github like Jetbrains IDE to code efficiently, Polypane to help with the design and responsiveness of the website, iconscout premium for the great icons on our website, We also received a lot of help from the plateforms provided to us by github to learn various aspects of web development like Thinkful, fontend masters etc. We used POPSQL to collaborate together to work on the datadabase and run tests collaboratively.
+Our tech stack was Nextjs, tailwindcss,flowbite,nodejs,express, typescript, prisma, postgresql.
+We made use of Github collaboration features and managed the whole project with the help of git's pull request feature. Our project managers reviewed each pull request and merged them after testing and resolving all the conflicts. We even implemented Github actions for workflow management to parse our incoming code so that it becomes readable for anyone who looks for open sourcing in it! Proper readme documentation and licence were added to the project to help any contributor looking to contribute.
 
 ## Challenges we ran into
 
-Database design was a challenging part of the project. Apart from these, many other obstacles were met like connecting the server with the website, designing the UI (tried our best!), implementing our planned workflow was all really tough but successfully achieved.
+Designing the database, creating the APIs and styling each part of the platform with precision was really a difficult job to do. We even wanted to host our website on GitHub pages but due to server-side rendering, we failed to do so. Making the website responsive so that it works smoothly in all type of devices was also challenging. One of the challenging tasks which we faced was managing the file upload of the user's prescription to the database.
 
 ## Accomplishments that we're proud of
 
-Since we all are not so experienced in fullstack web apps, creating a working prototype of the planned project was a really proud moment for us. Working together for the whole night livestreaming the code and co-ordinating with friends and successfully publishing the code also gave us a great feel of accomplishment.
+Since we all are not so experienced in full-stack web apps, achieving the workflow which was decided was us was in itself a big achievement for us. We made a really good database schema for the application which helped a lot in managing the flow of the application.
 
 ## What we learned
 
-We learnt how databases flow works, how we connect and work with fullstack applications and learnt a lot in designing the user interfaces too.
+It was our first time working with GitHub workflows so that was a new learning experience for us. We even learned to manage file uploads in full-stack applications. Designing the UI to work in all types of devices (Responsive Design) was also a skill which was refined while working on this application.
 
-## What's next for MedLabs
+## What's next for MediDesk
 
-We will add more features to our plateform like labs would be able to publish their results on the plateform too and registered people can check their result and co-ordinate with the labs there itself.
+We will add more features like applying for medical certificates, other appointments for different medical needs will be added. We will also work on providing more refined dashboards to our users and labs for smoother experience.
 
 ## Demo
 
-![MediDesk_Logo](https://cdn.discordapp.com/attachments/941636283208458250/949901872842559548/MEDIDESKbg.png)
-![Home_Page](https://cdn.discordapp.com/attachments/941636283208458250/949930420890378320/unknown.png)
+![Home_Page](https://cdn.discordapp.com/attachments/900363233033060395/950002506623242330/unknown.png)
 ![Servies-Section](https://cdn.discordapp.com/attachments/900363233033060395/949930658376073256/unknown.png)
 ![Client-Review](https://cdn.discordapp.com/attachments/900363233033060395/949931066708340766/unknown.png)
 ![Footer](https://cdn.discordapp.com/attachments/900363233033060395/949933027205738507/unknown.png)
 
 ## Mobile View
 
-![Home_Page](https://cdn.discordapp.com/attachments/900363233033060395/949933544417947648/unknown.png)
+![Home_Page](https://cdn.discordapp.com/attachments/900363233033060395/950003540976336926/unknown.png)
 ![Servies-Mob](https://cdn.discordapp.com/attachments/900363233033060395/949933859389190184/unknown.png)
 ![Application-Mob](https://cdn.discordapp.com/attachments/900363233033060395/949934867460808704/unknown.png)
 ![Footer](https://cdn.discordapp.com/attachments/900363233033060395/949935126807183360/unknown.png)
+
+## Logo
+
+![MediDesk_Logo](https://cdn.discordapp.com/attachments/941636283208458250/949901872842559548/MEDIDESKbg.png)
 
 ## Authors
 
@@ -65,7 +69,7 @@ We will add more features to our plateform like labs would be able to publish th
 
 # ✨ Contributors
 
-<a href="https://github.com/Buddhad/Contribution_Website/graphs/contributors">
+<a href="https://github.com/HackingThisWorld/medidesk/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=HackingThisWorld/medidesk" />
 </a>
 <div align="center">
