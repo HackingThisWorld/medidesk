@@ -8,7 +8,7 @@ export default function Services() {
         <div className="min-h-screen">
           <Tabs
             classNames={{
-              tabLabel: 'text-md font-base',
+              tabLabel: 'text-md font-base text-green-800',
             }}
             className="flex justify-start pt-2 pb-4"
           >
