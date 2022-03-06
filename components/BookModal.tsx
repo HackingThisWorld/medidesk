@@ -2,7 +2,7 @@ import { Group, MantineTheme, Text, useMantineTheme } from '@mantine/core'
 import { ImageIcon, UploadIcon, CrossCircledIcon } from '@modulz/radix-icons'
 import { Dropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone'
 import { DatePicker } from '@mantine/dates'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 function ImageUploadIcon({ status, ...props }) {
   if (status.accepted) {
     return <UploadIcon {...props} />
@@ -36,11 +36,9 @@ const BookModal = () => {
   const [hospital, setHospital]: any = useState()
   const [prescription, setPrescription]: any = useState()
   useEffect(() => {
-    
-  console.log(date)
-    
+    console.log(date)
   }, [date])
-  
+
   const theme = useMantineTheme()
   return (
     <>
@@ -125,10 +123,10 @@ const BookModal = () => {
               Prescription Date :
             </label>
 
-            <DatePicker value={date} onChange={()=> setDate} />
+            <DatePicker value={date} onChange={() => setDate} />
           </div>
         </div>
-      
+
         <div className="-space-y-px rounded-md shadow-sm">
           <div className="my-4">
             <label htmlFor="prescription_file" className="">

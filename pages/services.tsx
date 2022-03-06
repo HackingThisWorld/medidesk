@@ -14,18 +14,16 @@ export default function Services() {
             className="flex flex-col justify-start pt-2 pb-4"
           >
             <Tabs.Tab label="Services">
-              
-            <div className="grid grid-cols-3 gap-8">
-            {new Array(5).fill(0).map(() => (
-              <ServiceCard />
-            ))}
-          </div>
-              </Tabs.Tab>
+              <div className="grid grid-cols-3 gap-8">
+                {new Array(5).fill(0).map(() => (
+                  <ServiceCard />
+                ))}
+              </div>
+            </Tabs.Tab>
             <Tabs.Tab label="Request Consultation">
               <Consultation />
-              </Tabs.Tab>
+            </Tabs.Tab>
           </Tabs>
-          
         </div>
       </div>
     </div>
