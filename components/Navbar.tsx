@@ -114,7 +114,7 @@ export default function Example() {
                             <Menu.Item>
                               {({ active }) => (
                                 <a
-                                onClick={()=>router.push('/dashboard')}
+                                  onClick={() => router.push('/dashboard')}
                                   className={classNames(
                                     active ? 'bg-gray-100' : '',
                                     'block cursor-pointer px-4 py-2 text-sm text-gray-700'
