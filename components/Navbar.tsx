@@ -7,7 +7,7 @@ import { Modal } from '@mantine/core'
 import React, { useState } from 'react'
 import LabSignIn from './LabSignIn'
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -15,6 +15,7 @@ export default function Example() {
   const [opened, setOpened] = React.useState(false)
   const { data: session, status } = useSession()
   const router = useRouter()
+  let route = router.pathname
 
   return (
     <>
@@ -49,19 +50,31 @@ export default function Example() {
                     {/* Current: "border-green-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                     <div
                       onClick={() => router.push('/')}
-                      className="inline-flex cursor-pointer items-center border-b-2 border-green-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                      className={`inline-flex cursor-pointer items-center px-1 pt-1 text-sm font-medium text-gray-900 ${
+                        route === '/'
+                          ? 'border-b-2 border-green-500 text-gray-900'
+                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                      }`}
                     >
                       Home
                     </div>
                     <div
                       onClick={() => router.push('/services')}
-                      className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      className={`inline-flex cursor-pointer items-center px-1 pt-1 text-sm font-medium text-gray-900 ${
+                        route === '/services'
+                          ? 'border-b-2 border-green-500 text-gray-900'
+                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                      }`}
                     >
                       Services
                     </div>
                     <div
                       onClick={() => router.push('/about-us')}
-                      className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      className={`inline-flex cursor-pointer items-center px-1 pt-1 text-sm font-medium text-gray-900 ${
+                        route === '/about-us'
+                          ? 'border-b-2 border-green-500 text-gray-900'
+                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                      }`}
                     >
                       About Us
                     </div>
@@ -211,19 +224,31 @@ export default function Example() {
                 {/* Current: "bg-green-50 border-green-500 text-green-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
                 <div
                   onClick={() => router.push('/')}
-                  className="block cursor-pointer border-l-4 border-green-500 bg-green-50 py-2 pl-3 pr-4 text-base font-medium text-green-700"
+                  className={`block cursor-pointer py-2 pl-3 pr-4 text-base font-medium text-green-700 ${
+                    route === '/'
+                      ? 'border-l-4 border-green-500 bg-green-50 text-gray-900'
+                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  }`}
                 >
                   Home
                 </div>
                 <div
                   onClick={() => router.push('/services')}
-                  className="block cursor-pointer border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                  className={`block cursor-pointer py-2 pl-3 pr-4 text-base font-medium text-green-700 ${
+                    route === '/services'
+                      ? 'border-l-4 border-green-500 bg-green-50 text-gray-900'
+                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  }`}
                 >
                   Services
                 </div>
                 <div
                   onClick={() => router.push('/about-us')}
-                  className="block cursor-pointer border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                  className={`block cursor-pointer py-2 pl-3 pr-4 text-base font-medium text-green-700 ${
+                    route === '/about-us'
+                      ? 'border-l-4 border-green-500 bg-green-50 text-gray-900'
+                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  }`}
                 >
                   About Us
                 </div>
@@ -235,7 +260,7 @@ export default function Example() {
                       <div className="flex-shrink-0">
                         <img
                           className="h-10 w-10 rounded-full"
-                          src={session?.user?.image}
+                          src={session?.user?.image!!}
                           alt=""
                         />
                       </div>

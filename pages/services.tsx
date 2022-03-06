@@ -17,11 +17,14 @@ export default function Services() {
               <div className="grid grid-cols-3 gap-8">
                 {new Array(5).fill(0).map((_, index) => (
                   <ServiceCard key={index} />
+
                 ))}
               </div>
             </Tabs.Tab>
             <Tabs.Tab label="Request Consultation">
-              <Consultation />
+              <div className="p-5">
+                <Consultation />
+              </div>
             </Tabs.Tab>
           </Tabs>
         </div>

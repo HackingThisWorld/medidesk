@@ -5,6 +5,8 @@ import {
   UsersIcon,
 } from '@heroicons/react/outline'
 import { Button } from '@mantine/core'
+import Lottie from 'react-lottie'
+import animationData from '../assets/healthLottie.json'
 import Link from 'next/link'
 import CTA from '../components/CTA'
 import Info from '../components/Info'
@@ -189,6 +191,15 @@ export default function HomePage() {
   const { data: session, status } = useSession()
   const [opened, setOpened] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+
+  const defautOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
   return (
     <>
       <Modal
@@ -214,39 +225,41 @@ export default function HomePage() {
           {/* Hero section */}
           <div className="relative mt-10">
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-                <div className="absolute inset-0">
+              <div className="relative flex flex-row-reverse items-center justify-center shadow-xl sm:overflow-hidden sm:rounded-2xl">
+                {/* <div className="absolute inset-0">
                   <img
                     className="h-full w-full object-cover opacity-70 blur-[3px]"
                     src="https://t4.ftcdn.net/jpg/01/97/32/75/360_F_197327562_uPpQ7QhNyCmFBxkxv1XKefE5kLx2LfK5.jpg"
                     alt="People working on laptops"
                   />
                   <div className="absolute inset-0 " />
+                </div> */}
+                <div className="absolute opacity-50 sm:relative sm:opacity-100">
+                  <Lottie options={defautOptions} height={400} width={400} />
                 </div>
                 <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                  <h1 className=" text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                     <span className="block text-slate-700 ">
                       Virtual healthcare
                     </span>
                     <span className="block text-green-700">for you.</span>
                   </h1>
-                  <p className="text-slte-700 mx-auto mt-6 max-w-lg text-center text-2xl font-semibold sm:max-w-3xl">
+                  <p className="text-slte-700 mt-6 max-w-lg text-2xl sm:max-w-3xl">
                     Prediction or detection of various medical ailments.
                     healthcare, accessible online for everyone
                   </p>
-                  <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-                    <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
+                  <div className="mt-10 max-w-sm text-left sm:flex sm:max-w-none">
+                    <div className="space-y-4 sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                       <Link href="/services">
-                        <a className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-green-50 sm:px-8">
+                        <a className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
                           Services
                         </a>
                       </Link>
-                      <a
-                        href="#"
-                        className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
-                      >
-                        About Us
-                      </a>
+                      <Link href="/about-us">
+                        <a className="flex items-center justify-center rounded-md border border-transparent bg-white bg-green-50 px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-green-100 sm:px-8">
+                          About Us
+                        </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -296,7 +309,7 @@ export default function HomePage() {
               <h1 className="text-2xl lg:text-5xl">Our Client Reviews</h1>
             </div>
             <div className="parent">
-              <div className="div1 shell border-2 border-green-200">
+              <div className="div1 shell border-2 border-green-200 shadow-lg hover:shadow-xl">
                 <div className="head">
                   <img src="./images/image-daniel.jpg" alt="" />
                   <div>
@@ -322,7 +335,7 @@ export default function HomePage() {
                   our shift schedules. ”
                 </div>
               </div>
-              <div className="div4 shell border-2 border-green-200">
+              <div className="div4 shell border-2 border-green-200 shadow-lg hover:shadow-xl">
                 <div className="head">
                   <img src="./images/image-jonathan.jpg" alt="" />
                   <div>
@@ -340,7 +353,7 @@ export default function HomePage() {
                   patients. ”
                 </div>
               </div>
-              <div className="div3 shell border-2 border-green-200">
+              <div className="div3 shell border-2 border-green-200 shadow-lg hover:shadow-xl">
                 <div className="head">
                   <img src="./images/image-jeanette.jpg" alt="" />
                   <div>
@@ -357,7 +370,7 @@ export default function HomePage() {
                   the platform. ”
                 </div>
               </div>
-              <div className="div2 shell border-2 border-green-200">
+              <div className="div2 shell border-2 border-green-200 shadow-lg hover:shadow-xl">
                 <div className="head">
                   <img src="./images/image-patrick.jpg" alt="" />
                   <div>
@@ -379,7 +392,7 @@ export default function HomePage() {
                   efficient. ”
                 </div>
               </div>
-              <div className="div5 shell border-2 border-green-200">
+              <div className="div5 shell border-2 border-green-200 shadow-lg hover:shadow-xl">
                 <div className="head">
                   <img src="./images/image-kira.jpg" alt="" />
                   <div>
