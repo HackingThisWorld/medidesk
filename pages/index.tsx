@@ -161,7 +161,6 @@ export default function HomePage() {
         <main>
           {/* Hero section */}
           <div className="relative mt-10">
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
               <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
                 <div className="absolute inset-0">
