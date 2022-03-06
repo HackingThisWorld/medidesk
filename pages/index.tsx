@@ -142,7 +142,7 @@ export default function HomePage() {
       <Modal
         opened={opened}
         onClose={() => setOpened(false)}
-        title="Lab Sign In"
+        title="Contact Us"
       >
         <div>
           <ContactUs />
@@ -151,7 +151,7 @@ export default function HomePage() {
       <Modal
         opened={isOpen}
         onClose={() => setIsOpen(false)}
-        title="Lab Sign In"
+        title="Lab Sign Up"
       >
         <div>
           <LabSignUp />
@@ -186,7 +186,7 @@ export default function HomePage() {
                   <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                     <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                       <Link href="/services">
-                        <a className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-indigo-50 sm:px-8">
+                        <a className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-green-50 sm:px-8">
                           Services
                         </a>
                       </Link>
@@ -248,65 +248,68 @@ export default function HomePage() {
               <h1 className="text-2xl lg:text-5xl">Our Client Reviews</h1>
             </div>
             <div className="parent">
-              <div className="div1 shell hover:shadow-2xl">
+              <div className="div1 shell border-2 border-green-200">
                 <div className="head">
                   <img src="./images/image-daniel.jpg" alt="" />
                   <div>
                     Daniel Clifford
-                    <div className="head1">Verified Graduate</div>
+                    <div className="head1">
+                      The Polish-American Heart Clinics
+                    </div>
                   </div>
                 </div>
                 <div className="statement">
-                  I received a job offer mid-course, and the subjects I learned
-                  were current, if not more so, in the company I joined. I
-                  honestly feel I got every penny&apos;s worth.
+                  I found out about medidesk around an year ago. It resolved a
+                  handful of problems which we faced during our daily tasks.
                 </div>
                 <div className="content">
-                  “ I was an EMT for many years before I joined the bootcamp.
-                  I&apos;ve been looking to make a transition and have heard
-                  some people who had an amazing experience here. I signed up
-                  for the free intro course and found it incredibly fun! I
-                  enrolled shortly thereafter. The next 12 weeks was the best -
-                  and most grueling - time of my life. Since completing the
-                  course, I&apos;ve successfully switched careers, working as a
-                  Software Engineer at a VR startup. ”
+                  “ Medidesk provides support in my daily patient registration
+                  team management duties. Thanks to the Medidesk app I can
+                  analyze the numbers of incoming and outgoing calls. I can see
+                  which team members make the most appointments, how many of the
+                  answered calls on the given day converted into actual
+                  appointments, and what is the level of call traffic at
+                  particular times. This is all very useful information, which
+                  helps me optimize the work of my registration team and plan
+                  our shift schedules. ”
                 </div>
               </div>
-              <div className="div4 shell">
+              <div className="div4 shell border-2 border-green-200">
                 <div className="head">
                   <img src="./images/image-jonathan.jpg" alt="" />
                   <div>
-                    Jonathan Walters
-                    <div className="head1">Verified Graduate</div>
+                    Maciej Walters
+                    <div className="head1">Outpatiend Clinic - Wales</div>
                   </div>
                 </div>
                 <div className="statement">
                   The team was very supportive and kept me motivated
                 </div>
                 <div className="content">
-                  “ I started as a total newbie with virtually no coding skills.
-                  I now work as a mobile engineer for a big company. This was
-                  one of the best investments I&apos;ve made in myself. ”
+                  “ MediDesk was a great help in taking our business to great
+                  heights. It really helped increasing the reach of our clinic
+                  and our products and also gave us a boost in our clinic's
+                  patients. ”
                 </div>
               </div>
-              <div className="div3 shell">
+              <div className="div3 shell border-2 border-green-200">
                 <div className="head">
                   <img src="./images/image-jeanette.jpg" alt="" />
                   <div>
                     Jeanette Harmon
-                    <div className="head1">Verified Graduate</div>
+                    <div className="head1">Maple Heights M.D. Clinics</div>
                   </div>
                 </div>
                 <div className="statement">
                   An overall wonderful and rewarding experience
                 </div>
                 <div className="content rp">
-                  “ Thank you for the wonderful experience! I now have a job I
-                  really enjoy, and make a good living while doing something I
-                  love. ”
+                  “ Thank you for the wonderful application! We now have a great
+                  amount of patients registering with ease on with the help of
+                  the plateform. ”
                 </div>
               </div>
-              <div className="div2 shell">
+              <div className="div2 shell border-2 border-green-200">
                 <div className="head">
                   <img src="./images/image-patrick.jpg" alt="" />
                   <div>
@@ -315,37 +318,38 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="statement">
-                  Awesome teaching support from TAs who did the bootcamp
-                  themselves. Getting guidance from them and learning from their
-                  experiences was easy.
+                  Awesome plateform, great staff and support.
                 </div>
                 <div className="content">
-                  “ The staff seem genuinely concerned about my progress which I
-                  find really refreshing. The program gave me the confidence
-                  necessary to be able to go out in the world and present myself
-                  as a capable junior developer. The standard is above the rest.
-                  You will get the personal attention you need from an
-                  incredible community of smart and amazing people. ”
+                  “ I appreciate Medidesk particularly for the possibility to
+                  take control of many significant measures in one place. As the
+                  owner of several clinics in different locations, I like to
+                  have access to statistics regarding patient traffic and
+                  business results of each location, wherever I am, whenever I
+                  need to. I verify all advertising campaigns and I work
+                  methodically. I know exactly which activities are most
+                  efficient. ”
                 </div>
               </div>
-              <div className="div5 shell">
+              <div className="div5 shell border-2 border-green-200">
                 <div className="head">
                   <img src="./images/image-kira.jpg" alt="" />
                   <div>
                     Kira Whittle
-                    <div>Verified Graduate</div>
+                    <div>Whittle Clinics</div>
                   </div>
                 </div>
                 <div className="statement">
                   Such a life-changing experience. Highly recommended!
                 </div>
                 <div className="content rp">
-                  “ Before joining the bootcamp, I’ve never written a line of
-                  code. I needed some structure from professionals who can help
-                  me learn programming step by step. I was encouraged to enroll
-                  by a former student of theirs who can only say wonderful
-                  things about the program. The entire curriculum and staff did
-                  not disappoint.
+                  “ Using Medidesk I can check which marketing channels used
+                  with the purpose of acquiring patients are most cost-effective
+                  - e.g. a flyer campaign, or a Google AdWords campaign.
+                  Moreover, Medidesk became the favorite tool among our front
+                  desk employees, they can't imagine their work without it these
+                  days. It's a very useful tool for anyone whose goal is to
+                  increase profits in a broadly understood healthcare industry.
                 </div>
               </div>
             </div>
@@ -368,7 +372,7 @@ export default function HomePage() {
                     <Button
                       size="lg"
                       onClick={() => setIsOpen(true)}
-                      className="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-green-50 px-4 py-3 text-base font-medium text-green-800 shadow-sm hover:bg-green-100"
                     >
                       Sign Up for Labs
                     </Button>
@@ -468,7 +472,7 @@ export default function HomePage() {
                     id="email-address"
                     autoComplete="email"
                     required
-                    className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
+                    className="focus:ring-green -500 w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:placeholder-gray-400 focus:outline-none focus:ring-green-500"
                     placeholder="Enter your email"
                   />
                   <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">

@@ -9,6 +9,61 @@ const LabSignUp = () => {
         <input type="hidden" name="remember" defaultValue="true" />
         <div className="-space-y-px rounded-md shadow-sm">
           <div>
+            <label htmlFor="first-name" className="sr-only">
+              First Name
+            </label>
+            <input
+              id="first-name"
+              name="first-name"
+              type="text"
+              required
+              className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+              placeholder="First Name"
+            />
+          </div>
+          <div>
+            <label htmlFor="last-name" className="sr-only">
+              Last Name
+            </label>
+            <input
+              id="last-name"
+              name="last-name"
+              type="text"
+              required
+              className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+              placeholder="Last Name"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="company-name" className="sr-only">
+              Company Name
+            </label>
+            <input
+              id="company-name"
+              name="name"
+              type="text"
+              required
+              className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+              placeholder="Company Name"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="city" className="sr-only">
+              City
+            </label>
+            <input
+              id="city"
+              name="city"
+              type="text"
+              required
+              className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+              placeholder="City"
+            />
+          </div>
+
+          <div>
             <label htmlFor="email-address" className="sr-only">
               Email address
             </label>
@@ -18,7 +73,7 @@ const LabSignUp = () => {
               type="email"
               autoComplete="email"
               required
-              className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
               placeholder="Email address"
             />
           </div>
@@ -32,44 +87,18 @@ const LabSignUp = () => {
               type="password"
               autoComplete="current-password"
               required
-              className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
               placeholder="Password"
             />
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <input
-              id="remember-me"
-              name="remember-me"
-              type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-            />
-            <label
-              htmlFor="remember-me"
-              className="ml-2 block text-sm text-gray-900"
-            >
-              Remember me
-            </label>
-          </div>
-
-          <div className="text-sm">
-            <a
-              href="#"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
-            >
-              Forgot your password?
-            </a>
           </div>
         </div>
 
         <div>
           <button
             type="submit"
-            className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            className="group relative flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
           >
-            Sign in
+            Sign Up
           </button>
         </div>
       </form>

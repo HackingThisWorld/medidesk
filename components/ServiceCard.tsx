@@ -17,7 +17,7 @@ export default function ServiceCard() {
         <p className="mb-3 font-normal text-gray-700"></p>
         <a
           href="#"
-          className="inline-flex items-center rounded-lg bg-blue-700 py-2 px-3 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 "
+          className="inline-flex items-center rounded-lg bg-green-700 py-2 px-3 text-center text-sm font-medium text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
         >
           Book Now
           <svg

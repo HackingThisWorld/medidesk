@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-moz-selection {
+  background: #03946d46;
+}
+::selection {
+  background: #03946d41;
+}
 /* Services page */
 .hover-underline-animation {
   display: inline-block;
@@ -220,27 +227,20 @@
 .div1 {
   grid-area: 1 / 1 / 2 / 3;
   color: black;
-  background-repeat: no-repeat;
-  background-size: 20%;
-  background-position: top 0px right 130px;
 }
 .div2 {
   grid-area: 2 / 2 / 3 / 4;
-  background-color: hsl(219, 29%, 14%);
-  color: white;
+  color: black;
 }
 .div3 {
-  background-color: white;
   grid-area: 2 / 1 / 3 / 2;
   color: black;
 }
 .div4 {
   grid-area: 1 / 3 / 2 / 4;
-  background-color: hsl(217, 19%, 35%);
-  color: white;
+  color: black;
 }
 .div5 {
-  background-color: white;
   grid-area: 1 / 4 / 3 / 5;
   color: black;
 }
