@@ -65,7 +65,7 @@ We will add more features to our plateform like labs would be able to publish th
 
 # ✨ Contributors
 
-<a href="https://github.com/Buddhad/Contribution_Website/graphs/contributors">
+<a href="https://github.com/HackingThisWorld/medidesk/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=HackingThisWorld/medidesk" />
 </a>
 <div align="center">
