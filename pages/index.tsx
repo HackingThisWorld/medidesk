@@ -18,24 +18,76 @@ const features = [
   {
     name: 'Get yourself tested',
     description: 'Help us with necessary data so we detect if youre healthy.',
-    icon: InboxIcon,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path
+          d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
+          fill="rgba(255,255,255,1)"
+        />
+      </svg>
+    ),
   },
   {
     name: 'Health Records',
     description: 'Track and save your medical history and health data.',
-    icon: UsersIcon,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path
+          d="M7 4V2h10v2h3.007c.548 0 .993.445.993.993v16.014a.994.994 0 0 1-.993.993H3.993A.994.994 0 0 1 3 21.007V4.993C3 4.445 3.445 4 3.993 4H7zm0 2H5v14h14V6h-2v2H7V6zm2-2v2h6V4H9z"
+          fill="rgba(255,255,255,1)"
+        />
+      </svg>
+    ),
   },
   {
     name: 'Tips and Advice',
     description:
       'Blogposts from famous publications, catered to your need so you get the best recomendations',
-    icon: TrashIcon,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path
+          d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z"
+          fill="rgba(255,255,255,1)"
+        />
+      </svg>
+    ),
   },
   {
-    name: 'Compose in Markdown',
+    name: 'Book Appointment',
     description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: PencilAltIcon,
+      'Book lab appointments for hospitals to get yourself tested sitting right at your home, and get health advice from our verified health advisors registered with us and our partners.',
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path
+          d="M9.366 10.682a10.556 10.556 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296 11.422 11.422 0 0 0 4.583 1.364 1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995c-.53.055-1.064.082-1.602.082C9.94 21 3 14.06 3 5.5c0-.538.027-1.072.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.422 11.422 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294l-1.238.884zm-2.522-.657l1.9-1.357A13.41 13.41 0 0 1 7.647 5H5.01c-.006.166-.009.333-.009.5C5 12.956 11.044 19 18.5 19c.167 0 .334-.003.5-.01v-2.637a13.41 13.41 0 0 1-3.668-1.097l-1.357 1.9a12.442 12.442 0 0 1-1.588-.75l-.058-.033a12.556 12.556 0 0 1-4.702-4.702l-.033-.058a12.442 12.442 0 0 1-.75-1.588z"
+          fill="rgba(255,255,255,1)"
+        />
+      </svg>
+    ),
   },
 ]
 
@@ -221,10 +273,7 @@ export default function HomePage() {
                   <div key={feature.name}>
                     <div>
                       <span className="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10">
-                        <feature.icon
-                          className="h-6 w-6 text-white"
-                          aria-hidden="true"
-                        />
+                        {feature.icon}
                       </span>
                     </div>
                     <div className="mt-6">
@@ -305,7 +354,7 @@ export default function HomePage() {
                 <div className="content rp">
                   “ Thank you for the wonderful application! We now have a great
                   amount of patients registering with ease on with the help of
-                  the plateform. ”
+                  the platform. ”
                 </div>
               </div>
               <div className="div2 shell border-2 border-green-200">
