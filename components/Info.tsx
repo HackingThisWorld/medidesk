@@ -3,7 +3,7 @@ import React from 'react'
 
 const Info = () => {
   return (
-    <div className="mt-16 mb-40 flex flex-col items-center justify-center gap-12">
+    <div className="mt-0 mb-20 flex flex-col items-center justify-center gap-12 lg:mt-16 lg:mb-40">
       <div className="flex text-center text-4xl font-semibold">
         Our Application will be used everyday by:
       </div>
