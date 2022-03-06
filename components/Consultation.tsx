@@ -4,7 +4,7 @@ import { Dropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone'
 import { DatePicker } from '@mantine/dates'
 import { Select } from '@mantine/core'
 import { useState, useEffect } from 'react'
-function ImageUploadIcon({ status, ...props }) {
+function ImageUploadIcon({ status, ...props }: any) {
   if (status.accepted) {
     return <UploadIcon {...props} />
   }
@@ -35,22 +35,32 @@ const BookModal = () => {
   const [lastName, setLastName]: any = useState()
   const [email, setEmail]: any = useState()
   const [hospital, setHospital]: any = useState()
+  const [city, setCity]: any = useState()
   const [condition, setCondition]: any = useState()
   const [prescription, setPrescription]: any = useState()
-  useEffect(() => {
-    console.log(date)
-  }, [date])
 
+  const uploadFile = (e: any) => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append('first_name', firstName)
+    formData.append('last_name', lastName)
+    formData.append('hospital_name', hospital)
+    formData.append('city', city)
+    formData.append('email', email)
+    formData.append('health_condition', condition)
+    formData.append('prescription_date', date)
+    formData.append('prescription_file', prescription[0])
+
+    fetch('https://medidesk-server-production.up.railway.app/book/consult', {
+      method: 'POST',
+      body: formData,
+    })
+  }
   const theme = useMantineTheme()
   return (
     <>
-      <form
-        className="mt-8 space-y-6 overflow-y-auto"
-        onSubmit={(e) => e.preventDefault()}
-        action="https://eouwzr6y8ixcj5i.m.pipedream.net/"
-        encType="multipart/form-data"
-        method="POST"
-      >
+      <form className="mt-8 space-y-6 overflow-y-auto">
         <div className="-space-y-px rounded-md shadow-sm">
           <div className="my-4">
             <label htmlFor="prescription_file" className="">
@@ -61,6 +71,7 @@ const BookModal = () => {
               onReject={(files: any) => console.log('rejected files', files)}
               maxSize={3 * 1024 ** 2}
               accept={IMAGE_MIME_TYPE}
+              // @ts-ignore
               name="prescription_file"
             >
               {(status: { accepted: any; rejected: any }) => (
@@ -143,6 +154,25 @@ const BookModal = () => {
             />
           </div>
         </div>
+
+        <div className="-space-y-px rounded-md shadow-sm">
+          <div className="my-4">
+            <label htmlFor="city" className="">
+              City
+            </label>
+            <input
+              id="city"
+              name="city"
+              type="text"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              required
+              className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+              placeholder="Your City"
+            />
+          </div>
+        </div>
+
         <div className="my-4">
           <label htmlFor="email" className="">
             Your Email :
@@ -187,7 +217,7 @@ const BookModal = () => {
         />
         <div>
           <button
-            type="submit"
+            onClick={uploadFile}
             className="group relative flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
           >
             Book Consultation

@@ -4,13 +4,7 @@ import React from 'react'
 const ContactUs = () => {
   return (
     <>
-      <form
-        className="mt-8 space-y-6"
-        onSubmit={(e) => e.preventDefault()}
-        action="https://eouwzr6y8ixcj5i.m.pipedream.net/"
-        encType="application/x-www-form-urlencoded"
-        method="POST"
-      >
+      <form className="mt-8 space-y-6">
         <input type="hidden" name="remember" defaultValue="true" />
         <div className="-space-y-px rounded-md shadow-sm">
           <div className="my-4">

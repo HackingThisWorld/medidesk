@@ -47,7 +47,7 @@ const BookModal = () => {
     formData.append('prescription_date', date)
     formData.append('prescription_file', prescription[0])
 
-    fetch('http://localhost:3001/book/test', {
+    fetch('https://medidesk-server-production.up.railway.app/book/test', {
       method: 'POST',
       body: formData,
     })
