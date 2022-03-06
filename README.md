@@ -1,6 +1,6 @@
 # MediDesk
 
-## Tests and Advice Right At Your Screen.
+## Tests and Advice Right At Your Screen using our Platform.
 
 ![Contributors](https://img.shields.io/github/contributors/HackingThisWorld/medidesk)
 ![Forks](https://img.shields.io/github/forks/HackingThisWorld/medidesk)
