@@ -70,7 +70,8 @@ We successfully created a prototype of our plateform. Our backend and API's are 
 
 [MIT](../medidesk/LICENSE)
 
- # ✨ Contributors
+# ✨ Contributors
+
 <div align="center">
 <a href="https://github.com/HackingThisWorld/medidesk/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=HackingThisWorld/medidesk" />
