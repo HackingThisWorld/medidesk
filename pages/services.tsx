@@ -40,7 +40,7 @@ export default function Services() {
       available: '7',
     },
     {
-      name: 'Covit RTPCR/RAT Test',
+      name: 'Covid RTPCR/RAT Test',
       image:
         'https://media.discordapp.net/attachments/900363233033060395/949988241036152934/covid19.jpg?width=1161&height=653',
       available: '9',

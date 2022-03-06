@@ -33,7 +33,7 @@ export default function ServiceCard(props: any) {
             <div className="flex flex-wrap items-center">
               <button
                 onClick={() => setOpened(true)}
-                className="inline-flex cursor-pointer items-center border-2 px-2 py-1 text-green-800 hover:bg-green-800 hover:text-white md:mb-2 lg:mb-0"
+                className="inline-flex cursor-pointer rounded-md items-center border-2 px-2 py-1 text-green-800 hover:bg-green-800 hover:text-white md:mb-2 lg:mb-0"
               >
                 Book Now
               </button>
