@@ -376,7 +376,7 @@ export default function HomePage() {
                   <img src="./images/image-patrick.jpg" alt="" />
                   <div>
                     Patrick Abrams
-                    <div>Verified Graduate</div>
+                    <div>Outpatient Clinic MD</div>
                   </div>
                 </div>
                 <div className="statement">
