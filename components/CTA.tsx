@@ -27,7 +27,7 @@ const CTA = () => {
                 <h2 className="title-font mb-3 text-lg font-medium text-gray-900">
                   Get yourself tested
                 </h2>
-                <p className="text-base leading-relaxed">
+                <p className="p-4 text-base leading-relaxed">
                   Book a test to get yourself tested with our wide spectrum of
                   available tests provided by the labs with cutting edge
                   technology. Labs connected with us are situated across the
@@ -38,9 +38,9 @@ const CTA = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="ml-2 h-4 w-4"
                     viewBox="0 0 24 24"
                   >
@@ -57,7 +57,7 @@ const CTA = () => {
                 <h2 className="title-font mb-3 text-lg font-medium text-gray-900">
                   Health Records
                 </h2>
-                <p className="text-base leading-relaxed">
+                <p className="p-4 text-base leading-relaxed">
                   Track your health records and connect with our health experts
                   to get advice on your health condition. Having data about your
                   past health history also helps doctors to diagnose you better.
@@ -67,9 +67,9 @@ const CTA = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="ml-2 h-4 w-4"
                     viewBox="0 0 24 24"
                   >
@@ -86,7 +86,7 @@ const CTA = () => {
                 <h2 className="title-font mb-3 text-lg font-medium text-gray-900">
                   Tips and Advice
                 </h2>
-                <p className="text-base leading-relaxed">
+                <p className="p-4 text-base leading-relaxed">
                   Our plateform does not only unite and aggregate labs and
                   hospitals but also other health experts to provide you with
                   the best advice on your health condition and allow you to get
@@ -97,9 +97,9 @@ const CTA = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="ml-2 h-4 w-4"
                     viewBox="0 0 24 24"
                   >

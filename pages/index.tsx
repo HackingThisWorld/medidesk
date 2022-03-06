@@ -8,7 +8,11 @@ import { Button } from '@mantine/core'
 import Link from 'next/link'
 import CTA from '../components/CTA'
 import Info from '../components/Info'
+import React, { useState } from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { Modal } from '@mantine/core'
+import ContactUs from '../components/ContactUs'
+import LabSignUp from '../components/LabSignUp'
 
 const features = [
   {
@@ -34,32 +38,7 @@ const features = [
     icon:<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M9.366 10.682a10.556 10.556 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296 11.422 11.422 0 0 0 4.583 1.364 1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995c-.53.055-1.064.082-1.602.082C9.94 21 3 14.06 3 5.5c0-.538.027-1.072.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.422 11.422 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294l-1.238.884zm-2.522-.657l1.9-1.357A13.41 13.41 0 0 1 7.647 5H5.01c-.006.166-.009.333-.009.5C5 12.956 11.044 19 18.5 19c.167 0 .334-.003.5-.01v-2.637a13.41 13.41 0 0 1-3.668-1.097l-1.357 1.9a12.442 12.442 0 0 1-1.588-.75l-.058-.033a12.556 12.556 0 0 1-4.702-4.702l-.033-.058a12.442 12.442 0 0 1-.75-1.588z" fill="rgba(255,255,255,1)"/></svg>,
   },
 ]
-const metrics = [
-  {
-    id: 1,
-    stat: '8K+',
-    emphasis: 'Companies',
-    rest: 'use laoreet amet lacus nibh integer quis.',
-  },
-  {
-    id: 2,
-    stat: '25K+',
-    emphasis: 'Countries around the globe',
-    rest: 'lacus nibh integer quis.',
-  },
-  {
-    id: 3,
-    stat: '98%',
-    emphasis: 'Customer satisfaction',
-    rest: 'laoreet amet lacus nibh integer quis.',
-  },
-  {
-    id: 4,
-    stat: '12M+',
-    emphasis: 'Issues resolved',
-    rest: 'lacus nibh integer quis.',
-  },
-]
+
 const footerNavigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
@@ -156,344 +135,374 @@ function classNames(...classes: string[]) {
 
 export default function HomePage() {
   const { data: session, status } = useSession()
+  const [opened, setOpened] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="mt-3 bg-white">
-      <main>
-        {/* Hero section */}
-        <div className="relative mt-10">
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-              <div className="absolute inset-0">
-                <img
-                  className="h-full w-full object-cover opacity-70 blur-[3px]"
-                  src="https://t4.ftcdn.net/jpg/01/97/32/75/360_F_197327562_uPpQ7QhNyCmFBxkxv1XKefE5kLx2LfK5.jpg"
-                  alt="People working on laptops"
-                />
-                <div className="absolute inset-0 " />
-              </div>
-              <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                  <span className="block text-slate-700 ">
-                    Virtual healthcare
-                  </span>
-                  <span className="block text-green-700">for you.</span>
-                </h1>
-                <p className="text-slte-700 mx-auto mt-6 max-w-lg text-center text-2xl font-semibold sm:max-w-3xl">
-                  Prediction or detection of various medical ailments.
-                  healthcare, accessible online for everyone
-                </p>
-                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-                  <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                    <Link href="/services">
-                      <a className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-indigo-50 sm:px-8">
-                        Services
-                      </a>
-                    </Link>
-                    <a
-                      href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
-                    >
-                      About Us
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <>
+      <Modal
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Contact Us"
+      >
+        <div>
+          <ContactUs />
         </div>
-
-        <CTA />
-
-        <Info />
-        {/* Gradient Feature Section */}
-        <div className="fro mx-auto mb-20 w-11/12 rounded-[1.5rem] bg-gradient-to-r from-[#26AB7B] to-[#229c70]">
-          <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white">
-              Our Platform helps clinics and hospitals manige patients easily
-            </h2>
-            <p className="mt-4 max-w-3xl text-lg text-purple-200">
-              We provide a platform for you to get the best of the best.
-
-            </p>
-            <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
-              {features.map((feature) => (
-                <div key={feature.name}>
-                  <div>
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10">
-                      {feature.icon}
+      </Modal>
+      <Modal
+        opened={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Lab Sign Up"
+      >
+        <div>
+          <LabSignUp />
+        </div>
+      </Modal>
+      <div className="mt-3 bg-white">
+        <main>
+          {/* Hero section */}
+          <div className="relative mt-10">
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
+            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+              <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
+                <div className="absolute inset-0">
+                  <img
+                    className="h-full w-full object-cover opacity-70 blur-[3px]"
+                    src="https://t4.ftcdn.net/jpg/01/97/32/75/360_F_197327562_uPpQ7QhNyCmFBxkxv1XKefE5kLx2LfK5.jpg"
+                    alt="People working on laptops"
+                  />
+                  <div className="absolute inset-0 " />
+                </div>
+                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    <span className="block text-slate-700 ">
+                      Virtual healthcare
                     </span>
+                    <span className="block text-green-700">for you.</span>
+                  </h1>
+                  <p className="text-slte-700 mx-auto mt-6 max-w-lg text-center text-2xl font-semibold sm:max-w-3xl">
+                    Prediction or detection of various medical ailments.
+                    healthcare, accessible online for everyone
+                  </p>
+                  <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+                    <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
+                      <Link href="/services">
+                        <a className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#26AB7B] shadow-sm hover:bg-green-50 sm:px-8">
+                          Services
+                        </a>
+                      </Link>
+                      <a
+                        href="#"
+                        className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
+                      >
+                        About Us
+                      </a>
+                    </div>
                   </div>
-                  <div className="mt-6">
-                    <h3 className="text-lg font-medium text-white">
-                      {feature.name}
-                    </h3>
-                    <p className="mt-2 text-base text-purple-200">
-                      {feature.description}
-                    </p>
-                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* testimonial section */}
-        <div className="mx-auto md:px-2 lg:w-4/5">
-          <div className="mx-auto mb-5 border-b-4 border-b-gray-200 px-4 text-center text-5xl font-bold md:mb-10 md:w-1/2">
-            <h1 className="text-2xl lg:text-5xl">Our Client Reviews</h1>
-          </div>
-          <div className="parent">
-            <div className="div1 shell hover:shadow-2xl">
-              <div className="head">
-                <img src="./images/image-daniel.jpg" alt="" />
-                <div>
-                  Daniel Clifford
-                  <div className="head1">Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                I received a job offer mid-course, and the subjects I learned
-                were current, if not more so, in the company I joined. I
-                honestly feel I got every penny&apos;s worth.
-              </div>
-              <div className="content">
-                “ I was an EMT for many years before I joined the bootcamp.
-                I&apos;ve been looking to make a transition and have heard some
-                people who had an amazing experience here. I signed up for the
-                free intro course and found it incredibly fun! I enrolled
-                shortly thereafter. The next 12 weeks was the best - and most
-                grueling - time of my life. Since completing the course,
-                I&apos;ve successfully switched careers, working as a Software
-                Engineer at a VR startup. ”
-              </div>
-            </div>
-            <div className="div4 shell">
-              <div className="head">
-                <img src="./images/image-jonathan.jpg" alt="" />
-                <div>
-                  Jonathan Walters
-                  <div className="head1">Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                The team was very supportive and kept me motivated
-              </div>
-              <div className="content">
-                “ I started as a total newbie with virtually no coding skills. I
-                now work as a mobile engineer for a big company. This was one of
-                the best investments I&apos;ve made in myself. ”
-              </div>
-            </div>
-            <div className="div3 shell">
-              <div className="head">
-                <img src="./images/image-jeanette.jpg" alt="" />
-                <div>
-                  Jeanette Harmon
-                  <div className="head1">Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                An overall wonderful and rewarding experience
-              </div>
-              <div className="content rp">
-                “ Thank you for the wonderful experience! I now have a job I
-                really enjoy, and make a good living while doing something I
-                love. ”
-              </div>
-            </div>
-            <div className="div2 shell">
-              <div className="head">
-                <img src="./images/image-patrick.jpg" alt="" />
-                <div>
-                  Patrick Abrams
-                  <div>Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                Awesome teaching support from TAs who did the bootcamp
-                themselves. Getting guidance from them and learning from their
-                experiences was easy.
-              </div>
-              <div className="content">
-                “ The staff seem genuinely concerned about my progress which I
-                find really refreshing. The program gave me the confidence
-                necessary to be able to go out in the world and present myself
-                as a capable junior developer. The standard is above the rest.
-                You will get the personal attention you need from an incredible
-                community of smart and amazing people. ”
-              </div>
-            </div>
-            <div className="div5 shell">
-              <div className="head">
-                <img src="./images/image-kira.jpg" alt="" />
-                <div>
-                  Kira Whittle
-                  <div>Verified Graduate</div>
-                </div>
-              </div>
-              <div className="statement">
-                Such a life-changing experience. Highly recommended!
-              </div>
-              <div className="content rp">
-                “ Before joining the bootcamp, I’ve never written a line of
-                code. I needed some structure from professionals who can help me
-                learn programming step by step. I was encouraged to enroll by a
-                former student of theirs who can only say wonderful things about
-                the program. The entire curriculum and staff did not disappoint.
-              </div>
-            </div>
-          </div>
-        </div>
+          <CTA />
 
-        {/* CTA Section */}
-        <div className="bg-white">
-          <div className="mx-auto max-w-4xl py-16 px-4 sm:px-6 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to join us?</span>
-              <span className="block bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-clip-text text-transparent">
-                Get in touch or create an account.
-              </span>
-            </h2>
-            <div className="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
-              {status === 'authenticated' ? (
-                <></>
-              ) : (
-                <>
-                  <a
-                    href="#"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100"
-                  >
-                    Sign Up
-                  </a>
-                </>
-              )}
-              <Button
-                size="lg"
-                className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
-              >
-                Contact Us
-              </Button>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      {/* Footer Section */}
-      <footer className="bg-gray-50" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:pt-24">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                    Solutions
-                  </h3>
-                  <ul role="list" className="mt-4 space-y-4">
-                    {footerNavigation.solutions.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-12 md:mt-0">
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                    Support
-                  </h3>
-                  <ul role="list" className="mt-4 space-y-4">
-                    {footerNavigation.support.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div className="mt-12 md:mt-0">
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                    Legal
-                  </h3>
-                  <ul role="list" className="mt-4 space-y-4">
-                    {footerNavigation.legal.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className="text-base text-gray-500 hover:text-gray-900"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12 xl:mt-0">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-                Subscribe to our newsletter
-              </h3>
-              <p className="mt-4 text-base text-gray-500">
-                The latest news, articles, and resources, sent to your inbox
-                weekly.
+          <Info />
+          {/* Gradient Feature Section */}
+          <div className="fro mx-auto mb-20 w-11/12 rounded-[1.5rem] bg-gradient-to-r from-[#26AB7B] to-[#229c70]">
+            <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
+              <h2 className="text-3xl font-extrabold tracking-tight text-white">
+                Inbox support built for efficiency
+              </h2>
+              <p className="mt-4 max-w-3xl text-lg text-purple-200">
+                Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
+                Et magna sit morbi lobortis. Blandit aliquam sit nisl euismod
+                mattis in.
               </p>
-              <form className="mt-4 sm:flex sm:max-w-md">
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  name="email-address"
-                  id="email-address"
-                  autoComplete="email"
-                  required
-                  className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
-                  placeholder="Enter your email"
-                />
-                <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                  <button
-                    type="submit"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
-                  >
-                    Subscribe
-                  </button>
+              <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+                {features.map((feature) => (
+                  <div key={feature.name}>
+                    <div>
+                      <span className="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10">
+                        {feature.icon}  
+                      </span>
+                    </div>
+                    <div className="mt-6">
+                      <h3 className="text-lg font-medium text-white">
+                        {feature.name}
+                      </h3>
+                      <p className="mt-2 text-base text-purple-200">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* testimonial section */}
+          <div className="mx-auto md:px-2 lg:w-4/5">
+            <div className="mx-auto mb-5 border-b-4 border-b-gray-200 px-4 text-center text-5xl font-bold md:mb-10 md:w-1/2">
+              <h1 className="text-2xl lg:text-5xl">Our Client Reviews</h1>
+            </div>
+            <div className="parent">
+              <div className="div1 shell border-2 border-green-200">
+                <div className="head">
+                  <img src="./images/image-daniel.jpg" alt="" />
+                  <div>
+                    Daniel Clifford
+                    <div className="head1">
+                      The Polish-American Heart Clinics
+                    </div>
+                  </div>
                 </div>
-              </form>
+                <div className="statement">
+                  I found out about medidesk around an year ago. It resolved a
+                  handful of problems which we faced during our daily tasks.
+                </div>
+                <div className="content">
+                  “ Medidesk provides support in my daily patient registration
+                  team management duties. Thanks to the Medidesk app I can
+                  analyze the numbers of incoming and outgoing calls. I can see
+                  which team members make the most appointments, how many of the
+                  answered calls on the given day converted into actual
+                  appointments, and what is the level of call traffic at
+                  particular times. This is all very useful information, which
+                  helps me optimize the work of my registration team and plan
+                  our shift schedules. ”
+                </div>
+              </div>
+              <div className="div4 shell border-2 border-green-200">
+                <div className="head">
+                  <img src="./images/image-jonathan.jpg" alt="" />
+                  <div>
+                    Maciej Walters
+                    <div className="head1">Outpatiend Clinic - Wales</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  The team was very supportive and kept me motivated
+                </div>
+                <div className="content">
+                  “ MediDesk was a great help in taking our business to great
+                  heights. It really helped increasing the reach of our clinic
+                  and our products and also gave us a boost in our clinic's
+                  patients. ”
+                </div>
+              </div>
+              <div className="div3 shell border-2 border-green-200">
+                <div className="head">
+                  <img src="./images/image-jeanette.jpg" alt="" />
+                  <div>
+                    Jeanette Harmon
+                    <div className="head1">Maple Heights M.D. Clinics</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  An overall wonderful and rewarding experience
+                </div>
+                <div className="content rp">
+                  “ Thank you for the wonderful application! We now have a great
+                  amount of patients registering with ease on with the help of
+                  the platform. ”
+                </div>
+              </div>
+              <div className="div2 shell border-2 border-green-200">
+                <div className="head">
+                  <img src="./images/image-patrick.jpg" alt="" />
+                  <div>
+                    Patrick Abrams
+                    <div>Verified Graduate</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  Awesome plateform, great staff and support.
+                </div>
+                <div className="content">
+                  “ I appreciate Medidesk particularly for the possibility to
+                  take control of many significant measures in one place. As the
+                  owner of several clinics in different locations, I like to
+                  have access to statistics regarding patient traffic and
+                  business results of each location, wherever I am, whenever I
+                  need to. I verify all advertising campaigns and I work
+                  methodically. I know exactly which activities are most
+                  efficient. ”
+                </div>
+              </div>
+              <div className="div5 shell border-2 border-green-200">
+                <div className="head">
+                  <img src="./images/image-kira.jpg" alt="" />
+                  <div>
+                    Kira Whittle
+                    <div>Whittle Clinics</div>
+                  </div>
+                </div>
+                <div className="statement">
+                  Such a life-changing experience. Highly recommended!
+                </div>
+                <div className="content rp">
+                  “ Using Medidesk I can check which marketing channels used
+                  with the purpose of acquiring patients are most cost-effective
+                  - e.g. a flyer campaign, or a Google AdWords campaign.
+                  Moreover, Medidesk became the favorite tool among our front
+                  desk employees, they can't imagine their work without it these
+                  days. It's a very useful tool for anyone whose goal is to
+                  increase profits in a broadly understood healthcare industry.
+                </div>
+              </div>
             </div>
           </div>
-          <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between lg:mt-16">
-            <div className="flex space-x-6 md:order-2">
-              {footerNavigation.social.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-400 hover:text-gray-500"
+
+          {/* CTA Section */}
+          <div className="bg-white">
+            <div className="mx-auto max-w-4xl py-16 px-4 sm:px-6 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
+              <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                <span className="block">Ready to join us?</span>
+                <span className="block bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-clip-text text-transparent">
+                  Get in touch or create an account.
+                </span>
+              </h2>
+              <div className="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
+                {status === 'authenticated' ? (
+                  <></>
+                ) : (
+                  <>
+                    <Button
+                      size="lg"
+                      onClick={() => setIsOpen(true)}
+                      className="flex items-center justify-center rounded-md border border-transparent bg-green-50 px-4 py-3 text-base font-medium text-green-800 shadow-sm hover:bg-green-100"
+                    >
+                      Sign Up for Labs
+                    </Button>
+                  </>
+                )}
+                <Button
+                  size="lg"
+                  onClick={() => setOpened(true)}
+                  className="w-full rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-center text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
                 >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
-                </a>
-              ))}
+                  Contact Us
+                </Button>
+              </div>
             </div>
-            <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
-              &copy; Medicare. All rights reserved.
-            </p>
           </div>
-        </div>
-      </footer>
-    </div>
+        </main>
+
+        {/* Footer Section */}
+        <footer className="bg-gray-50" aria-labelledby="footer-heading">
+          <h2 id="footer-heading" className="sr-only">
+            Footer
+          </h2>
+          <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:pt-24">
+            <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+              <div className="grid grid-cols-2 gap-8 xl:col-span-2">
+                <div className="md:grid md:grid-cols-2 md:gap-8">
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                      Solutions
+                    </h3>
+                    <ul role="list" className="mt-4 space-y-4">
+                      {footerNavigation.solutions.map((item) => (
+                        <li key={item.name}>
+                          <a
+                            href={item.href}
+                            className="text-base text-gray-500 hover:text-gray-900"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-12 md:mt-0">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                      Support
+                    </h3>
+                    <ul role="list" className="mt-4 space-y-4">
+                      {footerNavigation.support.map((item) => (
+                        <li key={item.name}>
+                          <a
+                            href={item.href}
+                            className="text-base text-gray-500 hover:text-gray-900"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="md:grid md:grid-cols-2 md:gap-8">
+                  <div className="mt-12 md:mt-0">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                      Legal
+                    </h3>
+                    <ul role="list" className="mt-4 space-y-4">
+                      {footerNavigation.legal.map((item) => (
+                        <li key={item.name}>
+                          <a
+                            href={item.href}
+                            className="text-base text-gray-500 hover:text-gray-900"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-12 xl:mt-0">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
+                  Subscribe to our newsletter
+                </h3>
+                <p className="mt-4 text-base text-gray-500">
+                  The latest news, articles, and resources, sent to your inbox
+                  weekly.
+                </p>
+                <form className="mt-4 sm:flex sm:max-w-md">
+                  <label htmlFor="email-address" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    name="email-address"
+                    id="email-address"
+                    autoComplete="email"
+                    required
+                    className="focus:ring-green -500 w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-green-500 focus:placeholder-gray-400 focus:outline-none focus:ring-green-500"
+                    placeholder="Enter your email"
+                  />
+                  <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                    <button
+                      type="submit"
+                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-[#26AB7B] to-[#229c70] bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-[#24a677] hover:to-[#1bb57d]"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between lg:mt-16">
+              <div className="flex space-x-6 md:order-2">
+                {footerNavigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-400 hover:text-gray-500"
+                  >
+                    <span className="sr-only">{item.name}</span>
+                    <item.icon className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+              <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
+                &copy; Medicare. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
   )
 }
