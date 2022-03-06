@@ -18,7 +18,7 @@ Our plateform allows labs to register with us and link themselves and people can
 
 ## How we built it
 
-Our tech stack was Nextjs, tailwindcss,flowbite,nodejs,express,typescript,prisma,postgresql. We hosted the plateform on Azure services given to students by github, made use of several student perks provided by github like Jetbrains IDE to code efficiently, Polypane to help with the design and responsiveness of the website, iconscout premium for the great icons on our website, We also received a lot of help from the plateforms provided to us by github to learn various aspects of web development like Thinkful, fontend masters etc. We used POPSQL to collaborate together to work on the datadabase and run tests collaboratively.
+Our tech stack wasNextjs, tailwindcss,flowbite,nodejs,express,typescript,prisma,postgresql flowbite. We hosted the plateform on Azure services given to students by github, made use of several student perks provided by github like Jetbrains IDE to code efficiently, Polypane to help with the design and responsiveness of the website, iconscout premium for the great icons on our website, We also received a lot of help from the plateforms provided to us by github to learn various aspects of web development like Thinkful, fontend masters etc. We used POPSQL to collaborate together to work on the datadabase and run tests collaboratively.
 
 ## Challenges we ran into
 
