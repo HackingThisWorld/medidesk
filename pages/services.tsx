@@ -15,8 +15,8 @@ export default function Services() {
           >
             <Tabs.Tab label="Services">
               <div className="grid grid-cols-3 gap-8">
-                {new Array(5).fill(0).map(() => (
-                  <ServiceCard />
+                {new Array(5).fill(0).map((_, index) => (
+                  <ServiceCard key={index} />
                 ))}
               </div>
             </Tabs.Tab>
