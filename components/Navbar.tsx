@@ -113,15 +113,17 @@ export default function Example() {
                           <Menu.Items className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <Menu.Item>
                               {({ active }) => (
-                                <a
-                                  href="#"
-                                  className={classNames(
-                                    active ? 'bg-gray-100' : '',
-                                    'block cursor-pointer px-4 py-2 text-sm text-gray-700'
-                                  )}
-                                >
-                                  Your Profile
-                                </a>
+                                <div onClick={() => router.push('/dashboard')}>
+                                  <a
+                                    href="#"
+                                    className={classNames(
+                                      active ? 'bg-gray-100' : '',
+                                      'block cursor-pointer px-4 py-2 text-sm text-gray-700'
+                                    )}
+                                  >
+                                    Your Profile
+                                  </a>
+                                </div>
                               )}
                             </Menu.Item>
                             <Menu.Item>
@@ -293,12 +295,11 @@ export default function Example() {
                 {status === 'authenticated' ? (
                   <>
                     <div className="mt-3 space-y-1">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-                      >
-                        Your Profile
-                      </a>
+                      <div onClick={() => router.push('/dashboard')}>
+                        <a className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800">
+                          Your Profile
+                        </a>
+                      </div>
 
                       <a
                         onClick={() => signOut()}
