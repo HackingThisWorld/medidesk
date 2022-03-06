@@ -69,7 +69,7 @@ We successfully created a prototype of our plateform. Our backend and API's are 
 
 ## License
 
-[MIT](../medidesk/LICENSE)
+[Apache License](../medidesk/LICENSE)
 
 # ✨ Contributors
 
