@@ -39,7 +39,7 @@ const BookModal = () => {
   const [condition, setCondition]: any = useState()
   const [prescription, setPrescription]: any = useState()
 
-  const uploadFile = (e: any) => {
+  const uploadFile = async (e: any) => {
     e.preventDefault()
 
     const formData = new FormData()
@@ -52,10 +52,15 @@ const BookModal = () => {
     formData.append('prescription_date', date)
     formData.append('prescription_file', prescription[0])
 
-    fetch('https://medidesk-server-production.up.railway.app/book/consult', {
-      method: 'POST',
-      body: formData,
-    })
+    const res = await fetch(
+      'https://medidesk-server-production.up.railway.app/book/consult',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    ).then((res) => res.json())
+
+    console.log(res)
   }
   const theme = useMantineTheme()
   return (
