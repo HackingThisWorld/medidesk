@@ -237,8 +237,8 @@ export default function HomePage() {
                 <div className="absolute opacity-50 sm:relative sm:opacity-100">
                   <Lottie options={defautOptions} height={400} width={400} />
                 </div>
-                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                  <h1 className=" text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                <div className="relative px-4 py-16 text-center sm:px-6 sm:py-24 lg:py-32 lg:px-8 md:text-left">
+                  <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                     <span className="block text-slate-700 ">
                       Virtual healthcare
                     </span>
@@ -248,7 +248,7 @@ export default function HomePage() {
                     Prediction or detection of various medical ailments.
                     healthcare, accessible online for everyone
                   </p>
-                  <div className="mt-10 max-w-sm text-left sm:flex sm:max-w-none">
+                  <div className="mt-10 max-w-sm text-left sm:flex mx-auto sm:max-w-none">
                     <div className="space-y-4 sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                       <Link href="/services">
                         <a className="flex items-center justify-center rounded-md border border-transparent bg-opacity-60 bg-gradient-to-r from-[#26AB7B] to-[#229c70] px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">
