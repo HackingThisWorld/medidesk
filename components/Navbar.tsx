@@ -34,7 +34,7 @@
 
 //         <div>
 //           <div>
-//             <button className="rounded-sm bg-blue-500 px-4 py-1 text-white hover:bg-blue-500/90">
+//             <button className="rounded-sm bg-green-500 px-4 py-1 text-white hover:bg-green-500/90">
 //               Login
 //             </button>
 //           </div>
@@ -81,21 +81,21 @@ export default function Example() {
                 <div className="flex">
                   <div className="flex flex-shrink-0 items-center">
                     <img
-                      className="block h-8 w-auto lg:hidden"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                      className="block h-32 w-auto lg:hidden"
+                      src="https://cdn.discordapp.com/attachments/941636283208458250/949901545959477318/MEDIDESKlogo.png"
                       alt="Workflow"
                     />
                     <img
-                      className="hidden h-8 w-auto lg:block"
-                      src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+                      className="hidden h-32 w-auto lg:block"
+                      src="https://cdn.discordapp.com/attachments/941636283208458250/949901545959477318/MEDIDESKlogo.png"
                       alt="Workflow"
                     />
                   </div>
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                    {/* Current: "border-green-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                     <div
                       onClick={() => router.push('/')}
-                      className="inline-flex cursor-pointer items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                      className="inline-flex cursor-pointer items-center border-b-2 border-green-500 px-1 pt-1 text-sm font-medium text-gray-900"
                     >
                       Home
                     </div>
@@ -122,7 +122,7 @@ export default function Example() {
                     <button onClick={() => signOut()}>Sign Out</button> */}
                       <Menu as="div" className="relative ml-3">
                         <div>
-                          <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                          <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
@@ -240,7 +240,7 @@ export default function Example() {
                 </div>
                 <div className="-mr-2 flex items-center sm:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -254,10 +254,10 @@ export default function Example() {
 
             <Disclosure.Panel className="z-20 sm:hidden">
               <div className="space-y-1 pt-2 pb-3">
-                {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+                {/* Current: "bg-green-50 border-green-500 text-green-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
                 <div
                   onClick={() => router.push('/')}
-                  className="block cursor-pointer border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
+                  className="block cursor-pointer border-l-4 border-green-500 bg-green-50 py-2 pl-3 pr-4 text-base font-medium text-green-700"
                 >
                   Home
                 </div>
