@@ -17,13 +17,16 @@ const LabSignUp = () => {
       email,
       password,
     }
-    const response = await fetch('https://medidesk-server-production.up.railway.app/lab/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+    const response = await fetch(
+      'https://medidesk-server-production.up.railway.app/lab/register',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    )
     const json = await response.json()
     console.log(json)
   }
