@@ -15,11 +15,13 @@
     "@modulz/radix-icons": "^4.0.0",
     "@next-auth/prisma-adapter": "^1.0.1",
     "@prisma/client": "^3.10.0",
+    "@types/react-lottie": "^1.2.6",
     "dayjs": "^1.10.8",
     "next": "latest",
     "next-auth": "^4.2.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-lottie": "^1.2.3"
   },
   "devDependencies": {
     "@types/node": "17.0.4",
