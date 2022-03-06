@@ -113,6 +113,7 @@ export default function Example() {
                     </div>
                   </div>
                 </div>
+
                 <div className="hidden sm:ml-6 sm:flex sm:items-center">
                   {/* Profile dropdown */}
                   {status === 'authenticated' ? (
@@ -186,6 +187,7 @@ export default function Example() {
                         </Transition>
                       </Menu>
                     </div>
+
                   ) : (
                     <div>
                       <Menu as="div" className="relative ml-3">
