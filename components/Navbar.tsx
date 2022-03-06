@@ -187,7 +187,6 @@ export default function Example() {
                         </Transition>
                       </Menu>
                     </div>
-
                   ) : (
                     <div>
                       <Menu as="div" className="relative ml-3">
